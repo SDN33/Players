@@ -28,7 +28,10 @@ export default function Header() {
 
       <RightSide>
         <ImageWrapper>
-        <img src="https://res.cloudinary.com/daroyxenr/image/upload/v1715700185/Untitled-design-5--unscreen_vg0uol.gif" style={{ transform: "scale(1.5)" }} />
+        <video autoPlay loop muted style={{ borderRadius: "45px" }}>
+          <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
           <BackgroundSVG src="https://res.cloudinary.com/daroyxenr/image/upload/v1715699281/Untitled_design_ysobj2.svg" alt="Background SVG" />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
@@ -112,8 +115,8 @@ const ImageWrapper = styled.div`
 const QuoteWrapper = styled.div`
   position: absolute;
   left: 43px;
-  bottom: -78px;
-  max-width: 339px;
+  bottom: -4px;
+  max-width: 359px;
   padding: 30px;
   z-index: 99;
   max-height: 266px;
