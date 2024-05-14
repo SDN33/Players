@@ -137,9 +137,9 @@ const QuotesWrapper = styled.div`
 
 const BackgroundSVG = styled.img`
   position: absolute;
-  left: 8rem;
+  left: -1rem;
   bottom: -10rem;
-  width: 100%;
-  height: auto;
+  width: 150%;
+  height: 150%;
   z-index: -1;
 `;

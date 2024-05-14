@@ -64,7 +64,7 @@ const TextlongWrapper = styled.section`
 `;
 
 const VideoWrapper = styled.div`
-
+  
 `;
 
 const BtnWrapper = styled.div`
