@@ -291,8 +291,11 @@
     color: #F5F5F5;
     position: relative;
     left: -1em;
+    bottom: -0.5em;
   }
 
   .autheurname {
     font-size: 0.9rem;
+    position: relative;
+    bottom: -0.3em;
   }

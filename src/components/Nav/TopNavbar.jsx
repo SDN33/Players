@@ -88,12 +88,7 @@ const BurderWrapper = styled.button`
     display: block;
   }
 `;
-const UlWrapper = styled.ul`
-  display: flex;
-  @media (max-width: 760px) {
-    display: none;
-  }
-`;
+
 const UlWrapperRight = styled.ul`
   @media (max-width: 760px) {
     display: none;
