@@ -28,7 +28,7 @@ export default function Header() {
 
       <RightSide>
         <ImageWrapper>
-          <Image publicId="v1715700185/Untitled-design-5--unscreen_vg0uol.gif" ></Image>
+        <img src="https://res.cloudinary.com/daroyxenr/image/upload/v1715700185/Untitled-design-5--unscreen_vg0uol.gif" style={{ transform: "scale(1.5)" }} />
           <BackgroundSVG src="https://res.cloudinary.com/daroyxenr/image/upload/v1715699281/Untitled_design_ysobj2.svg" alt="Background SVG" />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
@@ -74,6 +74,8 @@ const LeftSide = styled.div`
 const RightSide = styled.div`
   width: 50%;
   height: 100%;
+  position: relative;
+  bottom: 80px;
   @media (max-width: 960px) {
     width: 100%;
     order: 1;
@@ -110,7 +112,7 @@ const ImageWrapper = styled.div`
 const QuoteWrapper = styled.div`
   position: absolute;
   left: 43px;
-  bottom: -278px;
+  bottom: -78px;
   max-width: 339px;
   padding: 30px;
   z-index: 99;
@@ -129,15 +131,11 @@ const QuotesWrapper = styled.div`
   top: -100px;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-`;
 
 const BackgroundSVG = styled.img`
   position: absolute;
   left: 8rem;
-  bottom: -25rem;
+  bottom: -10rem;
   width: 100%;
   height: auto;
   z-index: -1;
