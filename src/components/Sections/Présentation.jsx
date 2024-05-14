@@ -10,21 +10,29 @@ export default function Présentation() {
   return (
     <>
       <VideoWrapper>
+      <video autoPlay loop muted>
+        <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715719095/Untitled_design_6_h2crbz.mp4" type="video/mp4" />
+      </video>
         <LogoWrapper>
           <LogoIcon />
         </LogoWrapper>
         <TextWrapper id="présentation">
-          <h1>Qui sommes nous ?</h1>
+          <h1>Présentation</h1>
         </TextWrapper>
         <TextlongWrapper>
-          <p>Plongez au cœur de la communauté PLAYERS</p>
-          <p>Connectez-vous et découvrez des partenaires de jeu passionnés,</p>
-          <p>prêts à partager des moments uniques lors de matchs inoubliables</p>
-          <p> près de chez vous!</p>
+          <p>Bienvenue dans l'univers passionnant de PLAYERS !</p>
+          <p>Rejoignez notre communauté dynamique de joueurs et vivez des expériences uniques.</p>
+          <p>Découvrez des partenaires de jeu, prêts à partager des moments inoubliables lors de matchs près de chez vous !</p>
+          <p>Que vous soyez un amateur de football, basketball ou d'un sport de raquette, vous trouverez votre place parmi nous.</p>
+          <br />
+          <p>Rencontrez de nouvelles personnes et dépassez vous sur le terrain.</p>
+          <p>Relevez des défis, développez vos compétences et élargissez votre réseau</p>
+          <p>dans une ambiance conviviale et compétitive.</p>
+          <br />
+          <br />
+          <p style={{ color: '#FF4336'}}><strong style={{ fontSize: '2em' }}>Alors, prêt à relever le défi ?</strong></p>
         </TextlongWrapper>
         <BtnWrapper>
-            <p>Pour recevoir notre actualité , rejoignez notre newsletter :</p>
-            <br></br>
             <FullButton title="S'inscrire" />
         </BtnWrapper>
       </VideoWrapper>
@@ -38,7 +46,7 @@ const TextWrapper = styled.section`
   align-items: center;
   z-index: 1; /* Valeur positive */
   position: relative;
-  bottom: 24rem;
+  bottom: 78rem;
 `;
 
 const LogoWrapper = styled.div`
@@ -47,7 +55,7 @@ const LogoWrapper = styled.div`
   align-items: center;
   margin-top: 50px;
   position: relative;
-  bottom: 10.5rem;
+  bottom: 65rem;
   left: 0.5rem;
   z-index: 0; /* Valeur inférieure à Wrapper */
 `;
@@ -58,13 +66,13 @@ const TextlongWrapper = styled.section`
   align-items: center;
   z-index: 1; /* Valeur positive */
   position: relative;
-  bottom: 15rem;
-  font-size: 1.8rem;
+  bottom: 69rem;
+  font-size: 1.5rem;
   font-weight: 800;
 `;
 
 const VideoWrapper = styled.div`
-  
+  height: 160vh;
 `;
 
 const BtnWrapper = styled.div`
@@ -72,11 +80,11 @@ const BtnWrapper = styled.div`
   position: relative;
   left: 49%;
   transform: translateX(-50%);
-  top: -150px;
+  top: -67rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-style: italic;
-  color: #FF4336;
+  font-family: 'PublicSans', sans-serif;
   @media (max-width: 960px) {
     margin: 0 auto;
   }
