@@ -39,9 +39,9 @@ export default function Header() {
             </QuotesWrapper>
             <div>
               <p className="font15 whiteColor">
-                <em>"Après ma retraite sportive, j'ai ressenti un vide sans l'adrénaline des compétitions et la camaraderie des entraînements. Alors j'ai créé Players !"</em>
+                <em className="quotetext">"Après ma retraite sportive, j'ai ressenti un vide sans l'adrénaline des compétitions et la camaraderie des entraînements. Alors j'ai créé Players !"</em>
               </p>
-              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Stéphane Dei-negri | Créateur de Players</p>
+              <p className="font13 orangeColor textRight autheurname" style={{marginTop: '10px'}}>Stéphane Dei-negri | Créateur de Players</p>
             </div>
           </QuoteWrapper>
         </ImageWrapper>
@@ -89,7 +89,7 @@ const RightSide = styled.div`
 const BtnWrapper = styled.div`
   max-width: 190px;
   position: relative;
-  left: 50%;
+  left: 49%;
   transform: translateX(-50%);
   top: -80px;
   @media (max-width: 960px) {
@@ -115,11 +115,11 @@ const ImageWrapper = styled.div`
 const QuoteWrapper = styled.div`
   position: absolute;
   left: 43px;
-  bottom: -4px;
-  max-width: 359px;
+  bottom: -7px;
+  max-width: 388px;
   padding: 30px;
   z-index: 99;
-  max-height: 266px;
+  max-height: 145px;
   z-index: 99;
   @media (max-width: 960px) {
     left: 20px;
@@ -131,7 +131,7 @@ const QuoteWrapper = styled.div`
 const QuotesWrapper = styled.div`
   position: relative;
   left: -20px;
-  top: -100px;
+  top: -4.5rem;
 `;
 
 

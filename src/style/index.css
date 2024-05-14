@@ -271,8 +271,6 @@
   }
 
 
-
-
   .soustitre {
     font-size: 1.5rem;
     color: #F5F5F5;
@@ -284,4 +282,17 @@
     color: #F5F5F5;
     position: relative;
     top: -7rem;
+  }
+
+  .quotetext {
+    font-style: oblique;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1rem;
+    color: #F5F5F5;
+    position: relative;
+    left: -1em;
+  }
+
+  .autheurname {
+    font-size: 0.9rem;
   }
