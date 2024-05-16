@@ -59,7 +59,7 @@ const NossportsWrapper = styled.div`
   text-align: center;
   align-items: center;
   font-weight: 800;
-  height: 90vh;
+  height: 95vh;
   position: relative;
   top: -7rem;
   display: flex;

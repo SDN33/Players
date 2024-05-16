@@ -55,12 +55,12 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="projects"
+            to="Features"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Projects
+            Features
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -69,12 +69,12 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="blog"
+            to="features"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Blog
+            Features
           </Link>
         </li>
         <li className="semiBold font15 pointer">
@@ -83,12 +83,12 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="pricing"
+            to="Features"
             spy={true}
             smooth={true}
             offset={-60}
           >
-            Pricing
+            Features
           </Link>
         </li>
         <li className="semiBold font15 pointer">
