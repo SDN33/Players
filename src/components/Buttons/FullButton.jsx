@@ -17,7 +17,7 @@ const Wrapper = styled.button`
   font-size: 16px;
   border: 1px solid ${(props) => (props.border ? "#7620ff" : "#fff")};
   background: rgb(255, 49, 49);
-  background: -moz-radial-gradient(circle, rgba(255, 49, 49, 1) 0%, rgba(255, 145, 77, 1) 100%);
+  background: -moz-radial-gradient(linear, rgba(255, 49, 49, 1) 0%, rgba(255, 145, 77, 1) 100%);
   background: -webkit-radial-gradient(circle, rgba(255, 49, 49, 1) 0%, rgba(255, 145, 77, 1) 100%);
   background: radial-gradient(circle, rgba(255, 49, 49, 1) 0%, rgba(255, 145, 77, 1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff3131", endColorstr="#ff914d", GradientType=1);
