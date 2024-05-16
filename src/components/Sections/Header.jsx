@@ -1,13 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 // Components
 import FullButton from "../Buttons/FullButton";
 // Assets
 import QuotesIcon from "../../assets/svg/Quotes";
 import LogoIcon from "../../assets/svg/LogoLarge";
-
-
-
+import AndroidStoreImage from "../../assets/img/androidstoreicon.png";
+import AppleStoreImage from "../../assets/img/applestoreicon.png";
 
 export default function Header() {
   return (
@@ -19,19 +18,21 @@ export default function Header() {
           <br></br>
           <h4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</h4>
           <BtnWrapper>
-            <FullButton title="Newsletter" />
+            <FullButton title="S'inscrire" />
           </BtnWrapper>
         </div>
+        <StoreiconsWrapper>
+            <img src={AndroidStoreImage} alt="Android Store Icon" style={{ width: '148%', maxWidth: '200px', marginTop: '0px', position: 'relative', bottom: '-23rem', left: "-24rem" }} />
+            <img src={AppleStoreImage} alt="Apple Store Icon" style={{ width: '143%', maxWidth: '180px', marginLeft: '0px', position: 'relative', bottom: '-16rem', left: "-16rem" }} />
+        </StoreiconsWrapper>
       </LeftSide>
-
-
 
       <RightSide>
         <ImageWrapper>
-        <video autoPlay loop muted style={{ borderRadius: "45px" }}>
-          <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <video autoPlay loop muted style={{ borderRadius: "45px", width: "45%" }}>
+            <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <BackgroundSVG src="https://res.cloudinary.com/daroyxenr/image/upload/v1715699281/Untitled_design_ysobj2.svg" alt="Background SVG" />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
@@ -50,7 +51,6 @@ export default function Header() {
   );
 }
 
-
 const Wrapper = styled.section`
   padding-top: 80px;
   width: 100%;
@@ -59,11 +59,12 @@ const Wrapper = styled.section`
     flex-direction: column;
   }
 `;
+
 const LeftSide = styled.div`
   width: 50%;
   height: 100%;
   position: relative;
-  bottom: 80px;
+  bottom: 7rem;
   @media (max-width: 960px) {
     width: 100%;
     order: 2;
@@ -74,11 +75,12 @@ const LeftSide = styled.div`
     margin: 80px 0 50px 0;
   }
 `;
+
 const RightSide = styled.div`
   width: 50%;
   height: 100%;
   position: relative;
-  bottom: 80px;
+  bottom: 4rem;
   @media (max-width: 960px) {
     width: 100%;
     order: 1;
@@ -97,7 +99,6 @@ const BtnWrapper = styled.div`
   }
 `;
 
-
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -110,12 +111,10 @@ const ImageWrapper = styled.div`
   }
 `;
 
-
-
 const QuoteWrapper = styled.div`
   position: absolute;
   left: 43px;
-  bottom: -7px;
+  top: 20rem;
   max-width: 388px;
   padding: 30px;
   z-index: 99;
@@ -124,22 +123,36 @@ const QuoteWrapper = styled.div`
   @media (max-width: 960px) {
     left: 20px;
   }
-  @media (max-width: 560px) {
-    bottom: -50px;
-  }
 `;
+
 const QuotesWrapper = styled.div`
   position: relative;
   left: -20px;
   top: -4.5rem;
 `;
 
+const moveBackground = keyframes`
+  0% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(-49%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+`;
 
 const BackgroundSVG = styled.img`
   position: absolute;
-  left: -1rem;
+  left: 28rem;
   bottom: -10rem;
-  width: 150%;
-  height: 150%;
+  width: 170%;
+  height: 170%;
   z-index: -1;
+  animation: ${moveBackground} 5s infinite alternate;
+`;
+
+const StoreiconsWrapper = styled.div`
+
 `;
