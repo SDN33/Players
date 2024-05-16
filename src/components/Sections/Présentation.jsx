@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import FullButton from "../Buttons/FullButton";
 import LogoIcon from "../../assets/svg/LogoLarge";
@@ -7,6 +7,9 @@ import Nossports from "../../assets/img/nossports.svg";
 
 const VideoWrapper = styled.div`
   height: 160vh;
+  position: relative;
+  overflow: hidden;
+  top: -5rem;
 `;
 
 const TextWrapper = styled.section`
@@ -15,7 +18,7 @@ const TextWrapper = styled.section`
   align-items: center;
   z-index: 1;
   position: relative;
-  bottom: 71rem;
+  bottom: 57rem;
 `;
 
 const LogoWrapper = styled.div`
@@ -24,7 +27,7 @@ const LogoWrapper = styled.div`
   align-items: center;
   margin-top: 50px;
   position: relative;
-  bottom: 59rem;
+  bottom: 45rem;
   left: 0.5rem;
   z-index: 0;
 `;
@@ -35,7 +38,7 @@ const TextlongWrapper = styled.section`
   align-items: center;
   z-index: 1;
   position: relative;
-  bottom: 67rem;
+  bottom: 51rem;
   font-size: 1.5rem;
   font-weight: 800;
 `;
@@ -45,7 +48,7 @@ const BtnWrapper = styled.div`
   position: relative;
   left: 49%;
   transform: translateX(-50%);
-  top: -63rem;
+  top: -47rem;
   text-align: center;
   font-size: 1rem;
   font-style: italic;
@@ -61,10 +64,11 @@ const NossportsWrapper = styled.div`
   font-weight: 800;
   height: 95vh;
   position: relative;
-  top: -7rem;
+  top: -15rem;
   display: flex;
   justify-content: center;
 `;
+
 
 
 
@@ -73,10 +77,25 @@ export default function Présentation() {
     // Effect logic
   }, []);
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <VideoWrapper>
-        <video autoPlay loop muted style={{ maxHeight: "80%"}} >
+        <video autoPlay loop muted style={{ maxHeight: "80%", transform: `translateY(${scrollPosition * 0.3}px)` }}>
           <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715719095/Untitled_design_6_h2crbz.mp4" type="video/mp4" />
         </video>
         <LogoWrapper>
@@ -102,7 +121,7 @@ export default function Présentation() {
           <FullButton title="S'inscrire" />
         </BtnWrapper>
       </VideoWrapper>
-      <NossportsWrapper>
+      <NossportsWrapper style={{ transform: `translateY(${scrollPosition * 0.1}px)` }}>
         <img src={Nossports} alt="Nossports" />
       </NossportsWrapper>
     </>
