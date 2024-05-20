@@ -1,7 +1,8 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components"; // Import keyframes
 import LogoIcon from "../../assets/svg/LogoLarge";
-import FeaturesSVG from "../../assets/img/features.svg"; // Importation du SVG
+import FeaturesSVG from "../../assets/img/features.svg";
+import FeaturestextSVG from "../../assets/img/featurestext.svg";
 
 export default function Features() {
   return (
@@ -20,6 +21,9 @@ export default function Features() {
       <FeaturesSVGWrapper>
         <img src={FeaturesSVG} alt="Features" />
       </FeaturesSVGWrapper>
+      <FeaturestextWrapper>
+        <img src={FeaturestextSVG} alt="Featurestext" />
+      </FeaturestextWrapper>
     </BodyWrapper>
   );
 }
@@ -32,14 +36,18 @@ const BodyWrapper = styled.section`
 `;
 
 const VideoWrapper = styled.div`
-  width: 30%;
-  height: 30%;
+  width: 100%;
+  height: auto;
   position: relative;
-  top: -8rem;
-  left: 35%;
-  align-items: center;
-  justify-content: center;
+  top: -15rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  video {
+    max-width: 100%;
+    max-height: 100%;
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -56,15 +64,59 @@ const LogoWrapper = styled.div`
   }
 `;
 
-
-
 const FeaturesSVGWrapper = styled.div`
   position: absolute;
-  top: 30rem;
-  left: 51%;
+  top: 35rem;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+
+  @media (max-width: 768px) {
+    top: 45%; /* Ajustez la position pour les écrans de taille moyenne */
+    max-width: 80%; /* Réduisez la largeur maximale pour les écrans de taille moyenne */
+  }
+
+  @media (max-width: 480px) {
+    top: 40%; /* Ajustez la position pour les écrans plus petits */
+    max-width: 70%; /* Réduisez davantage la largeur maximale pour les écrans plus petits */
+  }
+`;
+
+const moveFeaturestextWrapper = keyframes`
+  0% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(-49%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+`;
+
+const FeaturestextWrapper = styled.div`
+  position: absolute;
+  top: 50rem;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  animation: ${moveFeaturestextWrapper} 5s infinite alternate;
+
+  @media (max-width: 768px) {
+    top: 45%; /* Ajustez la position pour les écrans de taille moyenne */
+    max-width: 80%; /* Réduisez la largeur maximale pour les écrans de taille moyenne */
+  }
+
+  @media (max-width: 480px) {
+    top: 40%; /* Ajustez la position pour les écrans plus petits */
+    max-width: 70%; /* Réduisez davantage la largeur maximale pour les écrans plus petits */
+  }
 `;
