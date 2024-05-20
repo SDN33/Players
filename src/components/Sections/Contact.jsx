@@ -57,6 +57,7 @@ export default function Contact() {
 
 const Wrapper = styled.section`
   width: 100%;
+  background-color: #060606;
 `;
 const HeaderInfo = styled.div`
   padding: 70px 0 30px 0;
@@ -101,8 +102,8 @@ const ButtonInput = styled.input`
   }
 `;
 const ContactImgBox = styled.div`
-  max-width: 180px; 
-  align-self: flex-end; 
+  max-width: 180px;
+  align-self: flex-end;
   margin: 10px 30px 10px 0;
 `;
 const SumbitWrapper = styled.div`
@@ -111,12 +112,4 @@ const SumbitWrapper = styled.div`
     margin-bottom: 50px;
   }
 `;
-
-
-
-
-
-
-
-
 
