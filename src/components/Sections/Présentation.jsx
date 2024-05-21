@@ -57,7 +57,7 @@ const BtnWrapper = styled.div`
   width: 100%;  /* Set width to 100% to take the full width of the parent */
   max-width: 190px;  /* Maximum width of the button */
   position: absolute;
-  top: 55rem;
+  top: 51rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -74,7 +74,7 @@ const NossportsWrapper = styled.div`
   height: 100vh;
   position: relative;
   top: -15rem;
-  left: 5%;
+  left: 6%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,10 +118,12 @@ export default function Présentation() {
         </TextWrapper>
         <TextlongWrapper>
           <p>Bienvenue dans l'univers passionnant de PLAYERS !</p>
+          <br />
           <p>Rejoignez notre communauté dynamique de joueurs et vivez des expériences uniques.</p>
           <p>Découvrez des partenaires de jeu, prêts à partager des moments inoubliables lors de matchs près de chez vous !</p>
           <p>Que vous soyez un amateur de football, basketball ou d'un sport de raquette, vous trouverez votre place parmi nous.</p>
           <p>Rencontrez de nouvelles personnes et dépassez-vous sur le terrain.</p>
+          <br />
           <p>Relevez des défis, développez vos compétences et élargissez votre réseau</p>
           <p>dans une ambiance conviviale et compétitive.</p>
         </TextlongWrapper>

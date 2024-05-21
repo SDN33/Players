@@ -1,73 +1,109 @@
-import React from "react";
-import styled from "styled-components";
-// Assets
+import React, { useEffect, useRef } from "react";
+import styled, { keyframes } from "styled-components";
+import LogoIcon from "../../assets/svg/LogoLarge";
+import ContactSvg from "../../assets/img/contactimg.svg";
 
-import FullButton from "../Buttons/FullButton";
+// Création du composant LogoWrapper
+const LogoWrapper = styled.div`
+  position: relative;
+  left: 10%;
+`;
 
 export default function Contact() {
+  const sloganRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sloganRef.current) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              sloganRef.current.classList.add("bounce");
+            } else {
+              sloganRef.current.classList.remove("bounce");
+            }
+          },
+          { threshold: 0.5 }
+        );
+
+        observer.observe(sloganRef.current);
+        return () => observer.disconnect();
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Wrapper id="contact">
-      <div className="lightBg">
-        <div className="container">
-          <HeaderInfo>
-            <h1 className="font40 extraBold">Let's get in touch</h1>
-            <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-              <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
-            </p>
-          </HeaderInfo>
-          <div className="row" style={{ paddingBottom: "30px" }}>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <Form>
-                <label className="font13">First name:</label>
-                <input type="text" id="fname" name="fname" className="font20 extraBold" />
-                <label className="font13">Email:</label>
-                <input type="text" id="email" name="email" className="font20 extraBold" />
-                <label className="font13">Subject:</label>
-                <input type="text" id="subject" name="subject" className="font20 extraBold" />
-                <textarea rows="4" cols="50" type="text" id="message" name="message" className="font20 extraBold" />
-              </Form>
-              <FullButton type="submit" title="Envoyer" />
-
-            </div>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 flex">
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Utilisation du composant LogoWrapper autour de LogoIcon */}
+      <LogoWrapper>
+        <LogoIcon />
+      </LogoWrapper>
+      <LogoContainer>
+        <Slogan ref={sloganRef} className="extraBold font60">
+          Contactez nous !
+        </Slogan>
+        <EmailContainer>
+          <h4 className="extraBold font40 purpleColor">Email</h4>
+          <p className="semiBold">Players.contact@gmail.com</p>
+          <br />
+          <br />
+          <h4 className="extraBold font40 purpleColor">Social</h4>
+          <p className="semiBold">Facebook</p>
+          <p className="semiBold">Instagram</p>
+          <p className="semiBold">Linkedin</p>
+        </EmailContainer>
+      </LogoContainer>
+      <ContactWrapper>
+        <img src={ContactSvg} style={{ width: "70%", height: "auto" }} />
+      </ContactWrapper>
     </Wrapper>
   );
 }
 
+const bounce = keyframes`
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+`;
+
 const Wrapper = styled.section`
-  width: 100%;
   background-color: #060606;
-  padding-top: 8rem;
+  height: 100vh; /* Réduit la hauteur pour éviter le défilement excessif */
+  position: relative;
+  top: 10rem;
+  z-index: 5;
 `;
-const HeaderInfo = styled.div`
-  padding: 70px 0 30px 0;
-  @media (max-width: 860px) {
-    text-align: center;
+
+const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 10rem;
+  z-index: 5;
+  position: relative;
+  top: -10rem;
+`;
+
+const EmailContainer = styled.div`
+  margin-top: 2rem;
+  text-align: left;
+`;
+
+const Slogan = styled.h4`
+  &.bounce {
+    animation: ${bounce} 0.5s ease-in-out;
   }
 `;
-const Form = styled.form`
-  padding: 70px 0 30px 0;
-  input,
-  textarea {
-    width: 100%;
-    background-color: transparent;
-    border: 0px;
-    outline: none;
-    box-shadow: none;
-    border-bottom: 1px solid #707070;
-    height: 30px;
-    margin-bottom: 30px;
-  }
-  textarea {
-    min-height: 100px;
-  }
-  @media (max-width: 860px) {
-    padding: 30px 0;
-  }
+
+const ContactWrapper = styled.div`
+  position: relative;
+  top: -45rem; /* Ajuste la position verticale */
+  left: 50%;
 `;
