@@ -17,9 +17,6 @@ export default function Contact() {
           <InnerWrapper className="flexSpaceCenter" style={{ padding: "30px 0" }}>
             <Link className="flexCenter animate pointer" to="home" smooth={true} offset={-80}>
               <LogoImg />
-              <h1 className="font15 extraBold whiteColor" style={{ marginLeft: "15px" }}>
-                Fanatic
-              </h1>
             </Link>
             <StyleP className="whiteColor font13">
               © {getCurrentYear()} - <span className="purpleColor font13">Fanatic</span> All Right Reserved
@@ -37,6 +34,7 @@ export default function Contact() {
 
 const Wrapper = styled.div`
   width: 100%;
+  z-index: 9;
 `;
 const InnerWrapper = styled.div`
   @media (max-width: 550px) {

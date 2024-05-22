@@ -33,6 +33,10 @@ const BodyWrapper = styled.section`
   height: 200vh;
   position: relative;
   top: 18rem;
+  margin-bottom: -20rem;
+  height: 280vh; /* 100% de la hauteur de la fenêtre visible */
+
+
 `;
 
 const VideoWrapper = styled.div`
@@ -75,15 +79,20 @@ const FeaturesSVGWrapper = styled.div`
   width: auto;
   height: auto;
 
-  @media (max-width: 768px) {
-    top: 45%; /* Ajustez la position pour les écrans de taille moyenne */
-    max-width: 80%; /* Réduisez la largeur maximale pour les écrans de taille moyenne */
+  @media (max-width: 960px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 150%;
+      height: 150%;
+      position: relative;
+      top: -15rem;
+      left: -7rem;
+    }
   }
 
-  @media (max-width: 480px) {
-    top: 40%; /* Ajustez la position pour les écrans plus petits */
-    max-width: 70%; /* Réduisez davantage la largeur maximale pour les écrans plus petits */
-  }
 `;
 
 const moveFeaturestextWrapper = keyframes`
@@ -110,13 +119,17 @@ const FeaturestextWrapper = styled.div`
   height: auto;
   animation: ${moveFeaturestextWrapper} 5s infinite alternate;
 
-  @media (max-width: 768px) {
-    top: 45%; /* Ajustez la position pour les écrans de taille moyenne */
-    max-width: 80%; /* Réduisez la largeur maximale pour les écrans de taille moyenne */
-  }
+  @media (max-width: 960px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
 
-  @media (max-width: 480px) {
-    top: 40%; /* Ajustez la position pour les écrans plus petits */
-    max-width: 70%; /* Réduisez davantage la largeur maximale pour les écrans plus petits */
+    img {
+      width: 170%;
+      height: 170%;
+      position: relative;
+      top: -20rem;
+      left: -9.5rem;
+    }
   }
 `;

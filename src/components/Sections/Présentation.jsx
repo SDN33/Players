@@ -61,7 +61,8 @@ const TextlongWrapper = styled.section`
   padding: 0 1rem;
 
   @media (max-width: 960px) {
-    bottom: 13rem;
+    bottom: 16rem;
+    font-size: 1.4rem;
   }
 `;
 

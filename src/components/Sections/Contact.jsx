@@ -77,7 +77,6 @@ const Wrapper = styled.section`
   background-color: #060606;
   height: 100vh; /* Réduit la hauteur pour éviter le défilement excessif */
   position: relative;
-  top: 10rem;
   z-index: 5;
 `;
 
@@ -106,4 +105,5 @@ const ContactWrapper = styled.div`
   position: relative;
   top: -45rem; /* Ajuste la position verticale */
   left: 50%;
+  z-index: 0;
 `;
