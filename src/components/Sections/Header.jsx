@@ -177,6 +177,7 @@ const LeftSide = styled.div`
     order: 2;
     margin: 50px 0;
     text-align: center;
+    
   }
   @media (max-width: 560px) {
     margin: 80px 0 50px 0;
@@ -189,9 +190,8 @@ const RightSide = styled.div`
   position: relative;
   bottom: 4rem;
   @media (max-width: 960px) {
-    width: 100%;
-    order: 1;
-    margin-top: 30px;
+    display: none;
+
   }
 `;
 
@@ -202,7 +202,6 @@ const BtnWrapper = styled.div`
   transform: translateX(-50%);
   top: -80px;
   @media (max-width: 960px) {
-    margin: 0 auto;
   }
 `;
 
@@ -212,10 +211,6 @@ const ImageWrapper = styled.div`
   position: relative;
   top: -0px;
   z-index: 9;
-  @media (max-width: 960px) {
-    width: 100%;
-    justify-content: center;
-  }
 `;
 
 const QuoteWrapper = styled.div`
@@ -227,15 +222,14 @@ const QuoteWrapper = styled.div`
   z-index: 99;
   max-height: 145px;
   z-index: 99;
-  @media (max-width: 960px) {
-    left: 20px;
-  }
+
 `;
 
 const QuotesWrapper = styled.div`
   position: relative;
   left: -20px;
   top: -4.5rem;
+
 `;
 
 const moveBackground = keyframes`
@@ -258,4 +252,7 @@ const BackgroundSVG = styled.img`
   height: 170%;
   z-index: -1;
   animation: ${moveBackground} 5s infinite alternate;
+  @media (max-width: 960px) {
+    display: flex; !important; ;
+  }
 `;

@@ -29,6 +29,10 @@ const TextWrapper = styled.section`
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+
+  @media (max-width: 960px) {
+    bottom: 55rem;
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -40,6 +44,9 @@ const LogoWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
+  @media (max-width: 960px) {
+    bottom: 45rem;
+  }
 `;
 
 const TextlongWrapper = styled.section`
@@ -52,6 +59,10 @@ const TextlongWrapper = styled.section`
   font-size: 1.5rem;
   font-weight: 800;
   padding: 0 1rem;
+
+  @media (max-width: 960px) {
+    bottom: 13rem;
+  }
 `;
 
 const BtnWrapper = styled.div`
@@ -65,8 +76,9 @@ const BtnWrapper = styled.div`
   font-size: 1rem;
   font-style: italic;
   font-family: 'PublicSans', sans-serif;
+
   @media (max-width: 960px) {
-    margin: 0 auto;
+    top: 60rem;
   }
 `;
 
