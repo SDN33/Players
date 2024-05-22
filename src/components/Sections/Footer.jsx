@@ -34,7 +34,7 @@ export default function Contact() {
 
 const Wrapper = styled.div`
   width: 100%;
-  z-index: 9;
+  
 `;
 const InnerWrapper = styled.div`
   @media (max-width: 550px) {

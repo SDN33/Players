@@ -58,7 +58,7 @@ export default function Contact() {
         </EmailContainer>
       </LogoContainer>
       <ContactWrapper>
-        <img src={ContactSvg} style={{ width: "70%", height: "auto" }} />
+      <img src={ContactSvg} style={{ width: "70%", height: "auto", zIndex: -3 }} />
       </ContactWrapper>
     </Wrapper>
   );
@@ -77,7 +77,12 @@ const Wrapper = styled.section`
   background-color: #060606;
   height: 100vh; /* Réduit la hauteur pour éviter le défilement excessif */
   position: relative;
-  z-index: 5;
+
+  @media (max-width: 960px) {
+    height: 100vh;
+    left: -6rem;
+  }
+
 `;
 
 const LogoContainer = styled.div`
@@ -85,7 +90,6 @@ const LogoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 2rem 10rem;
-  z-index: 5;
   position: relative;
   top: -10rem;
 `;
@@ -102,8 +106,14 @@ const Slogan = styled.h4`
 `;
 
 const ContactWrapper = styled.div`
-  position: relative;
-  top: -45rem; /* Ajuste la position verticale */
+  position: absolute;
+  bottom: -2rem;
   left: 50%;
-  z-index: 0;
+  width: 90%;
+  z-index: 0; /* Assurez-vous que le z-index est supérieur à celui du footer */
+
+  @media (max-width: 960px) {
+    left: 66%;
+  
+  }
 `;

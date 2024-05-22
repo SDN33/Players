@@ -31,7 +31,7 @@ const TextWrapper = styled.section`
   z-index: 1;
 
   @media (max-width: 960px) {
-    bottom: 55rem;
+    bottom: 49rem;
   }
 `;
 
@@ -45,7 +45,7 @@ const LogoWrapper = styled.div`
   transform: translateX(-50%);
   z-index: 0;
   @media (max-width: 960px) {
-    bottom: 45rem;
+    bottom: 39rem;
   }
 `;
 
@@ -61,8 +61,8 @@ const TextlongWrapper = styled.section`
   padding: 0 1rem;
 
   @media (max-width: 960px) {
-    bottom: 16rem;
-    font-size: 1.4rem;
+    bottom: 19rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -79,7 +79,7 @@ const BtnWrapper = styled.div`
   font-family: 'PublicSans', sans-serif;
 
   @media (max-width: 960px) {
-    top: 60rem;
+    top: 54rem;
   }
 `;
 

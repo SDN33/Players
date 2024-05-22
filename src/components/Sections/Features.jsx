@@ -36,6 +36,9 @@ const BodyWrapper = styled.section`
   margin-bottom: -20rem;
   height: 280vh; /* 100% de la hauteur de la fenêtre visible */
 
+  @media (max-width: 960px) {
+    height: 200vh;
+  }
 
 `;
 
@@ -85,11 +88,11 @@ const FeaturesSVGWrapper = styled.div`
     display: flex;
 
     img {
-      width: 150%;
-      height: 150%;
+      width: 180%;
+      height: 180%;
       position: relative;
       top: -15rem;
-      left: -7rem;
+      left: -10.5rem;
     }
   }
 
@@ -125,11 +128,11 @@ const FeaturestextWrapper = styled.div`
     display: flex;
 
     img {
-      width: 170%;
-      height: 170%;
+      width: 180%;
+      height: 180%;
       position: relative;
       top: -20rem;
-      left: -9.5rem;
+      left: -10.5rem;
     }
   }
 `;
