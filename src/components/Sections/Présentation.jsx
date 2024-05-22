@@ -200,7 +200,7 @@ export default function Présentation() {
           <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
         </TextlongWrapper>
         <BtnWrapper>
-          <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
+          <FullButton title="S'inscrire à la newsletter" action={() => setShowPopup(true)} />
         </BtnWrapper>
       </VideoWrapper>
       <NossportsWrapper style={{ transform: `translateY(${scrollPosition * 0.1}px)` }}>

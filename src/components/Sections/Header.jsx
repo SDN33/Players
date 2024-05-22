@@ -6,8 +6,6 @@ import FullButton from "../Buttons/FullButton";
 import QuotesIcon from "../../assets/svg/Quotes";
 import LogoIcon from "../../assets/svg/LogoLarge";
 import LightLogoIcon from "../../assets/svg/Logo";
-import AndroidStoreImage from "../../assets/img/androidstoreicon.png";
-import AppleStoreImage from "../../assets/img/applestoreicon.png";
 
 const Popup = styled.div`
   position: fixed;
@@ -94,14 +92,13 @@ export default function Presentation() {
           <p className="font20 semiBold soustitre">Faire du sport n’a jamais été aussi challengeant</p>
           <br></br>
           <h4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</h4>
+          <br></br>
+          <h6 className="purpleColor">👋🏻 ne manque pas le lancement prochainement !</h6>
+          <h6 className="purpleColor">Rejoins notre newsletter 📧</h6>
           <BtnWrapper>
-          <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
+            <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
           </BtnWrapper>
         </div>
-        <StoreiconsWrapper>
-            <img src={AndroidStoreImage} alt="Android Store Icon" style={{ width: '148%', maxWidth: '200px', marginTop: '0px', position: 'relative', bottom: '-23rem', left: "-24rem" }} />
-            <img src={AppleStoreImage} alt="Apple Store Icon" style={{ width: '143%', maxWidth: '180px', marginLeft: '0px', position: 'relative', bottom: '-16rem', left: "-16rem" }} />
-        </StoreiconsWrapper>
       </LeftSide>
 
       <RightSide>
@@ -164,6 +161,10 @@ const Wrapper = styled.section`
   @media (max-width: 960px) {
     flex-direction: column;
   }
+
+  h6 {
+    position: relative;
+    top: -6rem ;
 `;
 
 const LeftSide = styled.div`
@@ -257,8 +258,4 @@ const BackgroundSVG = styled.img`
   height: 170%;
   z-index: -1;
   animation: ${moveBackground} 5s infinite alternate;
-`;
-
-const StoreiconsWrapper = styled.div`
-
 `;
