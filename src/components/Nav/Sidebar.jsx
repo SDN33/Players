@@ -38,7 +38,7 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
-            to="services"
+            to="présentation"
             spy={true}
             smooth={true}
             offset={-60}
