@@ -50,25 +50,41 @@ const Popup = styled.div`
     width: 100%;
 
 `;
-const CenteredInput = styled.input`
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  margin-bottom: 10px; /* Ajoute un peu d'espace en dessous de l'input */
-`;
 
 
 
 
 
-export default function Header() {
+export default function Presentation() {
   const [showPopup, setShowPopup] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("Inscription newsletter"); // Définir automatiquement le message
+  const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
 
-  const handleSubscribe = () => {
-    console.log("handleSubscribe called");
-    setShowPopup(true);
-    console.log("showPopup value after setting to true:", showPopup);
+  const handleSubscribe = (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page par défaut
+    // Envoie la requête POST vers Formspree
+    fetch('https://formspree.io/f/xvoenaon', {
+      method: 'POST',
+      body: JSON.stringify({ email, message }), // Envoyez l'e-mail et le message
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Subscription successful!');
+        setShowPopup(false);
+        setSubscriptionSuccess(true); // Affiche l'alerte de succès
+      } else {
+        console.error('There was an error subscribing!');
+      }
+    })
+    .catch(error => {
+      console.error('There was an error subscribing!', error);
+    });
   };
+
 
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
@@ -79,7 +95,7 @@ export default function Header() {
           <br></br>
           <h4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</h4>
           <BtnWrapper>
-          <FullButton title="S'inscrire" action={handleSubscribe} />
+          <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
           </BtnWrapper>
         </div>
         <StoreiconsWrapper>
@@ -112,17 +128,31 @@ export default function Header() {
       {showPopup && (
         <div onClick={() => setShowPopup(false)} className="popup-background">
           <Popup onClick={(e) => e.stopPropagation()}>
-            <LightLogoIcon /> {/* Utilisation du logo redimensionné */}
-            <p className="font35 textCenter extraBold">👋🏻 Rejoins notre newsletter! 📧</p>
-            {/* Utilisation du composant d'input centré */}
-            <CenteredInput type="email" placeholder="Entrez votre adresse e-mail" className="font15 extraBold" />
-            <button onClick={() => setShowPopup(false)}>Valider</button>
-            {/* Bouton pour fermer le pop-up sans donner d'email */}
+            <LightLogoIcon />
+            <p>👋🏻 Rejoins notre newsletter! 📧</p>
+            <input
+              type="email"
+              placeholder="Entrez votre adresse e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <textarea
+              placeholder="Votre message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              style={{ display: "none" }} // Masquer automatiquement le champ de message
+            />
+            <button onClick={handleSubscribe}>Valider</button>
             <button onClick={() => setShowPopup(false)}>Fermer</button>
           </Popup>
         </div>
       )}
-      </div>
+      {subscriptionSuccess && (
+        <div className="subscription-alert">
+          <p>Votre inscription à la newsletter a été effectuée avec succès !</p>
+        </div>
+      )}
+    </div>
     </Wrapper>
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import FullButton from "../Buttons/FullButton";
 import LogoIcon from "../../assets/svg/LogoLarge";
+import LightLogoIcon from "../../assets/svg/Logo";
 import Nossports from "../../assets/img/nossports.svg";
 
 
@@ -87,6 +88,48 @@ const NossportsWrapper = styled.div`
   }
 `;
 
+const Popup = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #060606;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border: 1px solid #fff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column; /* Pour placer les éléments verticalement */
+
+  button {
+    margin-top: 1rem;
+    max-width: 10rem;
+    color: var(--bg);
+    font-weight: 700;
+    /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
+    background: linear-gradient(90deg, rgba(255,49,49,1) 0%, rgba(255,145,77,1) 100%);
+    padding: .8em 1.4em;
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
+    border-radius: 0.66em;
+    scale: 1;
+    transition: all var(--spring-duration) var(--spring-easing);
+    width: 100%;
+  }
+
+  input {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    width: 100%;
+
+`;
+
 
 
 export default function Présentation() {
@@ -103,6 +146,35 @@ export default function Présentation() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("Inscription newsletter"); // Définir automatiquement le message
+  const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
+
+  const handleSubscribe = (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page par défaut
+    // Envoie la requête POST vers Formspree
+    fetch('https://formspree.io/f/xvoenaon', {
+      method: 'POST',
+      body: JSON.stringify({ email, message }), // Envoyez l'e-mail et le message
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Subscription successful!');
+        setShowPopup(false);
+        setSubscriptionSuccess(true); // Affiche l'alerte de succès
+      } else {
+        console.error('There was an error subscribing!');
+      }
+    })
+    .catch(error => {
+      console.error('There was an error subscribing!', error);
+    });
+  };
 
   return (
     <>
@@ -128,12 +200,41 @@ export default function Présentation() {
           <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
         </TextlongWrapper>
         <BtnWrapper>
-          <FullButton title="S'inscrire" />
+          <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
         </BtnWrapper>
       </VideoWrapper>
       <NossportsWrapper style={{ transform: `translateY(${scrollPosition * 0.1}px)` }}>
         <img src={Nossports} alt="Nossports" />
       </NossportsWrapper>
+      <div>
+      {showPopup && (
+        <div onClick={() => setShowPopup(false)} className="popup-background">
+          <Popup onClick={(e) => e.stopPropagation()}>
+            <LightLogoIcon />
+            <p>👋🏻 Rejoins notre newsletter! 📧</p>
+            <input
+              type="email"
+              placeholder="Entrez votre adresse e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <textarea
+              placeholder="Votre message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              style={{ display: "none" }} // Masquer automatiquement le champ de message
+            />
+            <button onClick={handleSubscribe}>Valider</button>
+            <button onClick={() => setShowPopup(false)}>Fermer</button>
+          </Popup>
+        </div>
+      )}
+      {subscriptionSuccess && (
+        <div className="subscription-alert">
+          <p>Votre inscription à la newsletter a été effectuée avec succès !</p>
+        </div>
+      )}
+    </div>
     </>
   );
 }
