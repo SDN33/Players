@@ -444,3 +444,13 @@ button:hover .text,
 button.active .text {
     animation: text .66s ease-in 1 both;
 }
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}

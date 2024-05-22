@@ -3,8 +3,6 @@ import styled from "styled-components";
 import FullButton from "../Buttons/FullButton";
 import LogoIcon from "../../assets/svg/LogoLarge";
 import Nossports from "../../assets/img/nossports.svg";
-import LightLogoIcon from "../../assets/svg/Logo";
-
 
 
 const VideoWrapper = styled.div`
@@ -89,56 +87,6 @@ const NossportsWrapper = styled.div`
   }
 `;
 
-const Popup = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #060606;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  border: 1px solid #fff;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column; /* Pour placer les éléments verticalement */
-
-  button {
-    margin-top: 1rem;
-    max-width: 10rem;
-    color: var(--bg);
-    font-weight: 700;
-    /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
-    background: linear-gradient(90deg, rgba(255,49,49,1) 0%, rgba(255,145,77,1) 100%);
-    padding: .8em 1.4em;
-    position: relative;
-    isolation: isolate;
-    box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
-    border-radius: 0.66em;
-    scale: 1;
-    transition: all var(--spring-duration) var(--spring-easing);
-    width: 100%;
-  }
-
-  input {
-    padding: 0.5rem;
-    margin-top: 1rem;
-    border-radius: 8px;
-    border: 1px solid #fff;
-    width: 100%;
-
-`;
-const CenteredInput = styled.input`
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  margin-bottom: 10px; /* Ajoute un peu d'espace en dessous de l'input */
-`;
-
-
-
 
 
 export default function Présentation() {
@@ -156,14 +104,6 @@ export default function Présentation() {
     };
   }, []);
 
-  const [showPopup, setShowPopup] = useState(false);
-
-  const handleSubscribe = () => {
-    console.log("handleSubscribe called");
-    setShowPopup(true);
-    console.log("showPopup value after setting to true:", showPopup);
-  };
-
   return (
     <>
       <VideoWrapper>
@@ -177,38 +117,23 @@ export default function Présentation() {
           <h1>Présentation</h1>
         </TextWrapper>
         <TextlongWrapper>
-          <p>Bienvenue dans l'univers passionnant de PLAYERS !</p>
+          <p className="extraBold purpleColor">Bienvenue dans l'univers passionnant de PLAYERS !</p>
           <br />
           <p>Rejoignez notre communauté dynamique de joueurs et vivez des expériences uniques.</p>
           <p>Découvrez des partenaires de jeu, prêts à partager des moments inoubliables lors de matchs près de chez vous !</p>
           <p>Que vous soyez un amateur de football, basketball ou d'un sport de raquette, vous trouverez votre place parmi nous.</p>
           <p>Rencontrez de nouvelles personnes et dépassez-vous sur le terrain.</p>
           <br />
-          <p>Relevez des défis, développez vos compétences et élargissez votre réseau</p>
-          <p>dans une ambiance conviviale et compétitive.</p>
+          <p className="extraBold purpleColor">Relevez des défis, développez vos compétences et élargissez votre réseau</p>
+          <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
         </TextlongWrapper>
         <BtnWrapper>
-          <FullButton title="S'inscrire" action={handleSubscribe}  />
+          <FullButton title="S'inscrire" />
         </BtnWrapper>
       </VideoWrapper>
       <NossportsWrapper style={{ transform: `translateY(${scrollPosition * 0.1}px)` }}>
         <img src={Nossports} alt="Nossports" />
       </NossportsWrapper>
-      <div>
-      {showPopup && (
-        <div onClick={() => setShowPopup(false)} className="popup-background">
-          <Popup onClick={(e) => e.stopPropagation()}>
-            <LightLogoIcon /> {/* Utilisation du logo redimensionné */}
-            <p className="font35 textCenter extraBold">👋🏻 Rejoins notre newsletter! 📧</p>
-            {/* Utilisation du composant d'input centré */}
-            <CenteredInput type="email" placeholder="Entrez votre adresse e-mail" className="font15 extraBold" />
-            <button onClick={() => setShowPopup(false)}>Valider</button>
-            {/* Bouton pour fermer le pop-up sans donner d'email */}
-            <button onClick={() => setShowPopup(false)}>Fermer</button>
-          </Popup>
-        </div>
-      )}
-      </div>
     </>
   );
 }
