@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 // Components
 import FullButton from "../Buttons/FullButton";
@@ -9,6 +9,14 @@ import AndroidStoreImage from "../../assets/img/androidstoreicon.png";
 import AppleStoreImage from "../../assets/img/applestoreicon.png";
 
 export default function Header() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubscribe = () => {
+    console.log("handleSubscribe called");
+    setShowPopup(true);
+    console.log("showPopup value after setting to true:", showPopup);
+  };
+
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
@@ -18,7 +26,7 @@ export default function Header() {
           <br></br>
           <h4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</h4>
           <BtnWrapper>
-            <FullButton title="S'inscrire" />
+          <FullButton title="S'inscrire" action={handleSubscribe} />
           </BtnWrapper>
         </div>
         <StoreiconsWrapper>
@@ -47,6 +55,15 @@ export default function Header() {
           </QuoteWrapper>
         </ImageWrapper>
       </RightSide>
+      {showPopup && (
+        <Popup>
+          {/* Contenu de votre pop-up ici */}
+          <LogoIcon />
+          <p className="font15 textCenter extraBold">Rejoins notre newsletter! 📧  </p>
+          <input type="email" placeholder="Entrez votre adresse e-mail" className="font15 extraBold" />
+          <button onClick={() => setShowPopup(false)}>Valider</button>
+        </Popup>
+      )}
     </Wrapper>
   );
 }
@@ -155,4 +172,20 @@ const BackgroundSVG = styled.img`
 
 const StoreiconsWrapper = styled.div`
 
+`;
+
+const Popup = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #060606;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border: 1px solid #fff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `;
