@@ -97,6 +97,17 @@ const NossportsWrapper = styled.div`
     width: 90%;
     height: auto;
     object-fit: cover;
+
+    @media (max-width: 960px) {
+      width: 100%;
+      position: relative;
+      top: -5rem;
+    }
+  }
+
+  @media (max-width: 960px) {
+    margin-bottom: -14rem;
+    margin-top: -0.5rem;
   }
 `;
 
