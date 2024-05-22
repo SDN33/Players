@@ -5,6 +5,7 @@ import FullButton from "../Buttons/FullButton";
 // Assets
 import QuotesIcon from "../../assets/svg/Quotes";
 import LogoIcon from "../../assets/svg/LogoLarge";
+import LightLogoIcon from "../../assets/svg/Logo";
 import AndroidStoreImage from "../../assets/img/androidstoreicon.png";
 import AppleStoreImage from "../../assets/img/applestoreicon.png";
 
@@ -27,11 +28,23 @@ const Popup = styled.div`
   button {
     margin-top: 1rem;
     max-width: 10rem;
+    color: var(--bg);
+    font-weight: 700;
+    /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
+    background: linear-gradient(90deg, rgba(255,49,49,1) 0%, rgba(255,145,77,1) 100%);
+    padding: .8em 1.4em;
+    position: relative;
+    isolation: isolate;
+    box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
+    border-radius: 0.66em;
+    scale: 1;
+    transition: all var(--spring-duration) var(--spring-easing);
+    width: 100%;
   }
 
   input {
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     border-radius: 8px;
     border: 1px solid #fff;
     width: 100%;
@@ -43,7 +56,6 @@ const CenteredInput = styled.input`
   text-align: center;
   margin-bottom: 10px; /* Ajoute un peu d'espace en dessous de l'input */
 `;
-
 
 
 
@@ -97,20 +109,20 @@ export default function Header() {
         </ImageWrapper>
       </RightSide>
       <div>
-    {showPopup && (
-      <div onClick={() => setShowPopup(false)} className="popup-background">
-        <Popup onClick={(e) => e.stopPropagation()}>
-          <LogoIcon />
-          <p className="font35 textCenter extraBold">Rejoins notre newsletter! 📧</p>
-          {/* Utilisation du composant d'input centré */}
-          <CenteredInput type="email" placeholder="Entrez votre adresse e-mail" className="font15 extraBold" />
-          <button onClick={() => setShowPopup(false)}>Valider</button>
-          {/* Bouton pour fermer le pop-up sans donner d'email */}
-          <button onClick={() => setShowPopup(false)}>Fermer</button>
-        </Popup>
+      {showPopup && (
+        <div onClick={() => setShowPopup(false)} className="popup-background">
+          <Popup onClick={(e) => e.stopPropagation()}>
+            <LightLogoIcon /> {/* Utilisation du logo redimensionné */}
+            <p className="font35 textCenter extraBold">👋🏻 Rejoins notre newsletter! 📧</p>
+            {/* Utilisation du composant d'input centré */}
+            <CenteredInput type="email" placeholder="Entrez votre adresse e-mail" className="font15 extraBold" />
+            <button onClick={() => setShowPopup(false)}>Valider</button>
+            {/* Bouton pour fermer le pop-up sans donner d'email */}
+            <button onClick={() => setShowPopup(false)}>Fermer</button>
+          </Popup>
+        </div>
+      )}
       </div>
-    )}
-    </div>
     </Wrapper>
   );
 }
