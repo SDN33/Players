@@ -30,6 +30,11 @@ const TextWrapper = styled.section`
   transform: translateX(-50%);
   z-index: 1;
 
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    bottom: 52rem;
+  }
+
   @media (max-width: 960px) {
     bottom: 49rem;
   }
@@ -44,6 +49,12 @@ const LogoWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
+
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    bottom: 42rem;
+  }
+
   @media (max-width: 960px) {
     bottom: 39rem;
   }
@@ -59,6 +70,13 @@ const TextlongWrapper = styled.section`
   font-size: 1.5rem;
   font-weight: 800;
   padding: 0 1rem;
+
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    bottom: 20rem;
+    font-size: 1.2rem;
+
+  }
 
   @media (max-width: 960px) {
     bottom: 19rem;
@@ -77,6 +95,12 @@ const BtnWrapper = styled.div`
   font-size: 1rem;
   font-style: italic;
   font-family: 'PublicSans', sans-serif;
+
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    top: 56rem;
+
+  }
 
   @media (max-width: 960px) {
     top: 54rem;

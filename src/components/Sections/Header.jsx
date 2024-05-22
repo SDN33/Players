@@ -23,6 +23,12 @@ const Popup = styled.div`
   display: flex;
   flex-direction: column; /* Pour placer les éléments verticalement */
 
+
+  @media (max-width: 960px) {
+    text-align: center;
+    row-gap: 0.1rem;
+  }
+
   button {
     margin-top: 1rem;
     max-width: 10rem;
@@ -47,7 +53,15 @@ const Popup = styled.div`
     border: 1px solid #fff;
     width: 100%;
 
+    @media (max-width: 960px) {
+      text-align: center;
+      max-width: 90%;
+    }
+  }
+
 `;
+
+
 
 
 
@@ -158,13 +172,21 @@ const Wrapper = styled.section`
   padding-top: 80px;
   width: 100%;
   min-height: 840px;
+  margin-top: 3rem;
+
   @media (max-width: 960px) {
     flex-direction: column;
+    margin-top: 5rem;
   }
 
   h6 {
     position: relative;
     top: -6rem ;
+
+    @media (max-width: 480px) {
+    }
+
+  }
 `;
 
 const LeftSide = styled.div`
@@ -172,15 +194,18 @@ const LeftSide = styled.div`
   height: 100%;
   position: relative;
   bottom: 7rem;
+
   @media (max-width: 960px) {
     width: 100%;
-    order: 2;
     margin: 50px 0;
     text-align: center;
-    
+
   }
-  @media (max-width: 560px) {
-    margin: 80px 0 50px 0;
+
+  @media (max-width: 480px) {
+    width: 90%;
+    margin: 50px 0;
+    text-align: center;
   }
 `;
 
@@ -188,7 +213,7 @@ const RightSide = styled.div`
   width: 50%;
   height: 100%;
   position: relative;
-  bottom: 4rem;
+  bottom: 6rem;
   @media (max-width: 960px) {
     display: none;
 

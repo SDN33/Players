@@ -40,6 +40,11 @@ const BodyWrapper = styled.section`
     height: 200vh;
   }
 
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    height: 240vh;
+  }
+
 `;
 
 const VideoWrapper = styled.div`
@@ -96,6 +101,21 @@ const FeaturesSVGWrapper = styled.div`
     }
   }
 
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 150%;
+      height: 150%;
+      position: relative;
+      top: -4rem;
+      left: -8.5rem;
+    }
+  }
+
 `;
 
 const moveFeaturestextWrapper = keyframes`
@@ -133,6 +153,21 @@ const FeaturestextWrapper = styled.div`
       position: relative;
       top: -20rem;
       left: -10.5rem;
+    }
+  }
+
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 150%;
+      height: 150%;
+      position: relative;
+      top: -6rem;
+      left: -8.5rem;
     }
   }
 `;
