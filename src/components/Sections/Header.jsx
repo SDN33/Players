@@ -8,6 +8,47 @@ import LogoIcon from "../../assets/svg/LogoLarge";
 import AndroidStoreImage from "../../assets/img/androidstoreicon.png";
 import AppleStoreImage from "../../assets/img/applestoreicon.png";
 
+const Popup = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #060606;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border: 1px solid #fff;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column; /* Pour placer les éléments verticalement */
+
+  button {
+    margin-top: 1rem;
+    max-width: 10rem;
+  }
+
+  input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    width: 100%;
+
+`;
+const CenteredInput = styled.input`
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 10px; /* Ajoute un peu d'espace en dessous de l'input */
+`;
+
+
+
+
+
+
 export default function Header() {
   const [showPopup, setShowPopup] = useState(false);
 
@@ -55,15 +96,21 @@ export default function Header() {
           </QuoteWrapper>
         </ImageWrapper>
       </RightSide>
-      {showPopup && (
-        <Popup>
-          {/* Contenu de votre pop-up ici */}
+      <div>
+    {showPopup && (
+      <div onClick={() => setShowPopup(false)} className="popup-background">
+        <Popup onClick={(e) => e.stopPropagation()}>
           <LogoIcon />
-          <p className="font15 textCenter extraBold">Rejoins notre newsletter! 📧  </p>
-          <input type="email" placeholder="Entrez votre adresse e-mail" className="font15 extraBold" />
+          <p className="font35 textCenter extraBold">Rejoins notre newsletter! 📧</p>
+          {/* Utilisation du composant d'input centré */}
+          <CenteredInput type="email" placeholder="Entrez votre adresse e-mail" className="font15 extraBold" />
           <button onClick={() => setShowPopup(false)}>Valider</button>
+          {/* Bouton pour fermer le pop-up sans donner d'email */}
+          <button onClick={() => setShowPopup(false)}>Fermer</button>
         </Popup>
-      )}
+      </div>
+    )}
+    </div>
     </Wrapper>
   );
 }
@@ -172,20 +219,4 @@ const BackgroundSVG = styled.img`
 
 const StoreiconsWrapper = styled.div`
 
-`;
-
-const Popup = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #060606;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  border: 1px solid #fff;
-  align-items: center;
-  justify-content: center;
-  display: flex;
 `;
