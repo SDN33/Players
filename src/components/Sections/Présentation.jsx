@@ -18,7 +18,14 @@ const VideoWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @media (max-width: 480px) {
+      height: 80%;
+      object-fit: cover;
+    }
+
   }
+
 `;
 
 const TextWrapper = styled.section`
@@ -151,7 +158,17 @@ const NossportsWrapper = styled.div`
     margin-bottom: -14rem;
     margin-top: -0.5rem;
   }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    left: 0.6rem;
+    margin-bottom: -22rem;
+    margin-top: -11rem;
+    background-color: transparent;
+  }
 `;
+
+
 
 const Popup = styled.div`
   position: fixed;
