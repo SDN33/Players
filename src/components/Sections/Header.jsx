@@ -173,7 +173,7 @@ const Wrapper = styled.section`
   margin-top: 3rem;
 
   @media (max-width: 480px) {
-    padding-top: 3rem;
+    padding-top: 4rem;
     align-items: center;
     text-align: center;
   }
