@@ -24,6 +24,11 @@ const VideoWrapper = styled.div`
       object-fit: cover;
     }
 
+    @media only screen and (max-width: 428px) {
+      height: 70%;
+      object-fit: cover;
+    }
+
   }
 
   /* Tablettes */
@@ -53,6 +58,10 @@ const TextWrapper = styled.section`
   @media (max-width: 480px) {
     bottom: 50rem;
     color: #FF914D;
+  }
+
+  @media only screen and (max-width: 428px) {
+    top: 14rem;
   }
 `;
 
@@ -106,7 +115,13 @@ const TextlongWrapper = styled.section`
     bottom: 13rem;
     font-size: 1.1rem;
   }
+
+  @media only screen and (max-width: 428px) {
+    top: 20rem;
+  }
+
 `;
+
 
 const BtnWrapper = styled.div`
   width: 100%;  /* Set width to 100% to take the full width of the parent */
@@ -135,9 +150,10 @@ const BtnWrapper = styled.div`
     top: 55rem;
   }
 
-  @media (max-width: 600px) {
+  @media only screen and (max-width: 428px) {
     top: 55rem;
   }
+
 `;
 
 const NossportsWrapper = styled.div`
