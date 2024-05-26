@@ -19,11 +19,11 @@ export default function Contact() {
               <LogoImg />
             </Link>
             <StyleP className="whiteColor font13">
-              © {getCurrentYear()} - <span className="purpleColor font13">Fanatic</span> All Right Reserved
+              © {getCurrentYear()} - PLAYERS<span className="purpleColor font13"></span> - All Right Reserved
             </StyleP>
 
             <Link className="whiteColor animate pointer font13" to="home" smooth={true} offset={-80}>
-              Back to top
+              Retour en haut
             </Link>
           </InnerWrapper>
         </div>
@@ -34,7 +34,7 @@ export default function Contact() {
 
 const Wrapper = styled.div`
   width: 100%;
-  
+
 `;
 const InnerWrapper = styled.div`
   @media (max-width: 550px) {
@@ -46,3 +46,5 @@ const StyleP = styled.p`
     margin: 20px 0;
   }
 `;
+
+

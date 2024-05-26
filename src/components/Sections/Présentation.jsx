@@ -26,6 +26,10 @@ const VideoWrapper = styled.div`
 
   }
 
+  /* Tablettes */
+  @media (max-width: 1285.60px) {
+    height: 140vh;
+  }
 `;
 
 const TextWrapper = styled.section`
@@ -47,7 +51,8 @@ const TextWrapper = styled.section`
   }
 
   @media (max-width: 480px) {
-    bottom: 57rem;
+    bottom: 50rem;
+    color: #FF914D;
   }
 `;
 
@@ -71,8 +76,7 @@ const LogoWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    left: 13.1rem;
-    top: 1.5rem;
+    display: none;
 `;
 
 const TextlongWrapper = styled.section`
@@ -89,7 +93,7 @@ const TextlongWrapper = styled.section`
   /* Tablettes */
   @media (max-width: 1285.60px) {
     bottom: 20rem;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 
   }
 
@@ -99,7 +103,7 @@ const TextlongWrapper = styled.section`
   }
 
   @media (max-width: 480px) {
-    bottom: 15rem;
+    bottom: 13rem;
     font-size: 1.1rem;
   }
 `;
@@ -108,7 +112,7 @@ const BtnWrapper = styled.div`
   width: 100%;  /* Set width to 100% to take the full width of the parent */
   max-width: 190px;  /* Maximum width of the button */
   position: absolute;
-  top: 51rem;
+  top: 55rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -118,7 +122,7 @@ const BtnWrapper = styled.div`
 
   /* Tablettes */
   @media (max-width: 1285.60px) {
-    top: 56rem;
+    top: 60rem;
 
   }
 
@@ -127,7 +131,7 @@ const BtnWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    top: 65rem;
+    top: 55rem;
   }
 `;
 

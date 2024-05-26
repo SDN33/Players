@@ -9,6 +9,24 @@ const LogoWrapper = styled.div`
   left: 10%;
 `;
 
+const ContactWrapper = styled.div`
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  width: 90%;
+  z-index: 0; /* Assurez-vous que le z-index est supérieur à celui du footer */
+
+  @media (max-width: 960px) {
+    left: 66%;
+  }
+
+  @media (max-width: 480px) {
+    img {
+      display: none;
+    }
+  }
+`;
+
 export default function Contact() {
   const sloganRef = useRef(null);
 
@@ -103,17 +121,6 @@ const Slogan = styled.h4`
   &.bounce {
     animation: ${bounce} 0.5s ease-in-out;
   }
+
 `;
 
-const ContactWrapper = styled.div`
-  position: absolute;
-  bottom: -2rem;
-  left: 50%;
-  width: 90%;
-  z-index: 0; /* Assurez-vous que le z-index est supérieur à celui du footer */
-
-  @media (max-width: 960px) {
-    left: 66%;
-  
-  }
-`;
