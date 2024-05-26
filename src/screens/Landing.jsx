@@ -5,7 +5,8 @@ import Header from "../components/Sections/Header";
 import Présentation from "../components/Sections/Présentation";
 import Features from "../components/Sections/Features";
 import Contact from "../components/Sections/Contact";
-import Footer from "../components/Sections/Footer"
+import Footer from "../components/Sections/Footer";
+import CookiePopup from "../components/Elements/Cookies"; // Importez le composant CookiePopup
 
 export default function Landing() {
   return (
@@ -16,6 +17,7 @@ export default function Landing() {
       <Features />
       <Contact />
       <Footer />
+      <CookiePopup />
     </>
   );
 }

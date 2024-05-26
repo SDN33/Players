@@ -18,11 +18,10 @@ const Popup = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
   border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  display: flex;
-  flex-direction: column; /* Pour placer les éléments verticalement */
-
 
   @media (max-width: 960px) {
     text-align: center;
@@ -34,14 +33,11 @@ const Popup = styled.div`
     max-width: 10rem;
     color: var(--bg);
     font-weight: 700;
-    /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
     background: linear-gradient(90deg, rgba(255,49,49,1) 0%, rgba(255,145,77,1) 100%);
     padding: .8em 1.4em;
     position: relative;
-    isolation: isolate;
     box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
     border-radius: 0.66em;
-    scale: 1;
     transition: all var(--spring-duration) var(--spring-easing);
     width: 100%;
   }
@@ -58,27 +54,28 @@ const Popup = styled.div`
       max-width: 90%;
     }
   }
-
 `;
 
+const LogoWrapper = styled.div`
 
-
-
-
+  @media (max-width: 480px) {
+    position: relative;
+    left: 1rem;
+  }
+`;
 
 
 export default function Presentation() {
   const [showPopup, setShowPopup] = useState(false);
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("Inscription newsletter"); // Définir automatiquement le message
+  const [message, setMessage] = useState("Inscription newsletter");
   const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
 
   const handleSubscribe = (event) => {
-    event.preventDefault(); // Empêche le rechargement de la page par défaut
-    // Envoie la requête POST vers Formspree
+    event.preventDefault();
     fetch('https://formspree.io/f/xvoenaon', {
       method: 'POST',
-      body: JSON.stringify({ email, message }), // Envoyez l'e-mail et le message
+      body: JSON.stringify({ email, message }),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -87,7 +84,7 @@ export default function Presentation() {
       if (response.ok) {
         console.log('Subscription successful!');
         setShowPopup(false);
-        setSubscriptionSuccess(true); // Affiche l'alerte de succès
+        setSubscriptionSuccess(true);
       } else {
         console.error('There was an error subscribing!');
       }
@@ -97,16 +94,17 @@ export default function Presentation() {
     });
   };
 
-
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
         <div style={{ textAlign: 'center' }}>
-          <LogoIcon/>
-          <p className="font20 semiBold soustitre">Faire du sport n’a jamais été aussi challengeant</p>
-          <br></br>
-          <h4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</h4>
-          <br></br>
+          <LogoWrapper>
+            <LogoIcon className="responsive-logo"/>
+          </LogoWrapper>
+          <ResponsiveP className="font20 semiBold soustitre">Faire du sport n’a jamais été aussi challengeant</ResponsiveP>
+          <br/>
+          <ResponsiveH4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</ResponsiveH4>
+          <br/>
           <h6 className="purpleColor">👋🏻 ne manque pas le lancement prochainement !</h6>
           <h6 className="purpleColor">Rejoins notre newsletter 📧</h6>
           <BtnWrapper>
@@ -151,7 +149,7 @@ export default function Presentation() {
               placeholder="Votre message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              style={{ display: "none" }} // Masquer automatiquement le champ de message
+              style={{ display: "none" }}
             />
             <button onClick={handleSubscribe}>Valider</button>
             <button onClick={() => setShowPopup(false)}>Fermer</button>
@@ -174,6 +172,12 @@ const Wrapper = styled.section`
   min-height: 840px;
   margin-top: 3rem;
 
+  @media (max-width: 480px) {
+    padding-top: 3rem;
+    align-items: center;
+    text-align: center;
+  }
+
   @media (max-width: 960px) {
     flex-direction: column;
     margin-top: 5rem;
@@ -181,11 +185,7 @@ const Wrapper = styled.section`
 
   h6 {
     position: relative;
-    top: -6rem ;
-
-    @media (max-width: 480px) {
-    }
-
+    top: -6rem;
   }
 `;
 
@@ -199,12 +199,11 @@ const LeftSide = styled.div`
     width: 100%;
     margin: 50px 0;
     text-align: center;
-
   }
 
   @media (max-width: 480px) {
     width: 90%;
-    margin: 50px 0;
+    margin-top: -0.1rem;
     text-align: center;
   }
 `;
@@ -216,7 +215,6 @@ const RightSide = styled.div`
   bottom: 6rem;
   @media (max-width: 960px) {
     display: none;
-
   }
 `;
 
@@ -226,8 +224,6 @@ const BtnWrapper = styled.div`
   left: 49%;
   transform: translateX(-50%);
   top: -80px;
-  @media (max-width: 960px) {
-  }
 `;
 
 const ImageWrapper = styled.div`
@@ -246,15 +242,12 @@ const QuoteWrapper = styled.div`
   padding: 30px;
   z-index: 99;
   max-height: 145px;
-  z-index: 99;
-
 `;
 
 const QuotesWrapper = styled.div`
   position: relative;
   left: -20px;
   top: -4.5rem;
-
 `;
 
 const moveBackground = keyframes`
@@ -278,6 +271,26 @@ const BackgroundSVG = styled.img`
   z-index: -1;
   animation: ${moveBackground} 5s infinite alternate;
   @media (max-width: 960px) {
-    display: flex; !important; ;
+    display: flex;
+  }
+`;
+
+
+const ResponsiveP = styled.p`
+
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+`;
+
+const ResponsiveH4 = styled.h4`
+
+  @media (max-width: 480px) {
+    font-size: 40px;
+    max-width: 70%;
+    text-align: center;
+    position: relative;
+    left: 16%;
   }
 `;

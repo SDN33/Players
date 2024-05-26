@@ -88,7 +88,7 @@ const Wrapper = styled.nav`
   right: ${(props) => (props.sidebarOpen ? "0px" : "-400px")};
   z-index: 9999;
   @media (max-width: 400px) {
-    width: 100%;
+    width: 70%;
   }
 `;
 const SidebarHeader = styled.div`
