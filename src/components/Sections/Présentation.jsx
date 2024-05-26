@@ -98,7 +98,7 @@ const TextlongWrapper = styled.section`
   }
 
   @media (max-width: 960px) {
-    bottom: 19rem;
+    bottom: 16rem;
     font-size: 1.2rem;
   }
 
@@ -128,9 +128,14 @@ const BtnWrapper = styled.div`
 
   @media (max-width: 960px) {
     top: 54rem;
+    padding: 0 1rem;
   }
 
   @media (max-width: 480px) {
+    top: 55rem;
+  }
+
+  @media (max-width: 600px) {
     top: 55rem;
   }
 `;
