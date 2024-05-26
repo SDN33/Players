@@ -38,6 +38,10 @@ const TextWrapper = styled.section`
   @media (max-width: 960px) {
     bottom: 49rem;
   }
+
+  @media (max-width: 480px) {
+    bottom: 57rem;
+  }
 `;
 
 const LogoWrapper = styled.div`
@@ -58,6 +62,10 @@ const LogoWrapper = styled.div`
   @media (max-width: 960px) {
     bottom: 39rem;
   }
+
+  @media (max-width: 480px) {
+    left: 13.1rem;
+    top: 1.5rem;
 `;
 
 const TextlongWrapper = styled.section`
@@ -82,6 +90,11 @@ const TextlongWrapper = styled.section`
     bottom: 19rem;
     font-size: 1.2rem;
   }
+
+  @media (max-width: 480px) {
+    bottom: 15rem;
+    font-size: 1.1rem;
+  }
 `;
 
 const BtnWrapper = styled.div`
@@ -104,6 +117,10 @@ const BtnWrapper = styled.div`
 
   @media (max-width: 960px) {
     top: 54rem;
+  }
+
+  @media (max-width: 480px) {
+    top: 65rem;
   }
 `;
 
