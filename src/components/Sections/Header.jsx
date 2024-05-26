@@ -225,7 +225,11 @@ const BtnWrapper = styled.div`
   transform: translateX(-50%);
   top: -80px;
 
-  
+  @media (max-width: 480px) {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -284,6 +288,7 @@ const ResponsiveP = styled.p`
   @media (max-width: 480px) {
     font-size: 16px;
     position: relative;
+
   }
 `;
 
@@ -294,6 +299,7 @@ const ResponsiveH4 = styled.h4`
     max-width: 70%;
     text-align: center;
     position: relative;
-    left: 16%;
+    left: 15%;
+    margin-bottom: -1rem;
   }
 `;
