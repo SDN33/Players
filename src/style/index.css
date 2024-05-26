@@ -22,33 +22,41 @@
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+  
   ol, ul {
     list-style: none;
   }
+
   blockquote, q {
     quotes: none;
   }
+
   blockquote:before, blockquote:after,
   q:before, q:after {
     content: '';
     content: none;
   }
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
+
   a {
     text-decoration: none!important;
     color: white;
   }
+
   a:hover {
     color: #FF4336;
   }
+
   input:-webkit-autofill {
     -webkit-box-shadow:0 0 0 50px #fff inset; /* Change the color to your own background color */
     box-shadow: transparent;
     -webkit-text-fill-color: #fff;
   }
+
   body {
     background: #060606;
     color: white;
@@ -56,10 +64,12 @@
     overflow-x: hidden;
     font-size: 16px;
     font-weight: 400;
-
-
-
   }
+
+  html, body {
+    overflow-x: hidden;
+  }
+
   .container {
     width: 100%;
     max-width: 1220px;
@@ -493,5 +503,3 @@ button.active .text {
     transform: scale(1.5);
   }
 }
-
-
