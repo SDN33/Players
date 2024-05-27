@@ -67,12 +67,15 @@ const ContentWrapper = styled.div`
     top: 7.5rem;
   }
 
+
 `;
 
 const TextWrapper = styled.div`
   width: 100%;
   text-align: center;
   margin-bottom: rem;
+  position: relative;
+  top: -3rem;
 `;
 
 const TextlongWrapper = styled.div`
@@ -270,8 +273,6 @@ export default function Présentation() {
             <p className="extraBold purpleColor">Relevez des défis, développez vos compétences et élargissez votre réseau</p>
             <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
           </TextlongWrapper>
-          <br />
-          <br />
           <BtnWrapper>
             <FullButton title="S'inscrire à la newsletter" action={() => setShowPopup(true)} />
           </BtnWrapper>

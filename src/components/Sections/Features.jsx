@@ -5,6 +5,8 @@ import LightLogoIcon from "../../assets/svg/Logo";
 // Assets
 import FeaturesSVG from "../../assets/img/features.svg";
 import FeaturestextSVG from "../../assets/img/featurestext.svg";
+import StoreBadge from "../../assets/img/storebadge.png";
+
 
 
 const LogoWrapper = styled.div`
@@ -50,6 +52,26 @@ const TextMobileWrapper = styled.div`
   }
 `;
 
+const BadgeWrapper = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+top: 80rem;
+width: 100%;
+z-index: 1;
+
+@media (max-width: 480px) {
+  position: relative;
+  top: -2rem;
+  left: 19%;
+  width: 60%;
+
+}
+
+
+`;
+
 export default function Features() {
   return (
     <BodyWrapper>
@@ -80,6 +102,9 @@ export default function Features() {
       <FeaturestextWrapper>
         <img src={FeaturestextSVG} alt="Featurestext" />
       </FeaturestextWrapper>
+      <BadgeWrapper>
+            <img src={StoreBadge} alt="Store Badge" style={{ width: "100%", maxWidth: "17rem" }} />
+          </BadgeWrapper>
     </BodyWrapper>
   );
 }
@@ -98,12 +123,14 @@ const BodyWrapper = styled.section`
 
   /* Tablettes */
   @media (max-width: 1285.60px) {
-    height: 240vh;
+    height: 150vh;
   }
 
   @media (max-width: 480px) {
     height: 140vh;
   }
+
+
 
 `;
 
@@ -125,9 +152,12 @@ const VideoWrapper = styled.div`
 
 
 const FeaturesSVGWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 38rem;
-  left: 50%;
+  left: 52%;
   transform: translateX(-50%);
   z-index: 1;
   max-width: 90%;
@@ -156,11 +186,9 @@ const FeaturesSVGWrapper = styled.div`
     display: flex;
 
     img {
-      width: 160%;
-      height: 160%;
       position: relative;
-      top: -4rem;
-      left: -8rem;
+      top: -20rem;
+      left: 0%;
       align-self: center;
       display: flex;
 
@@ -176,8 +204,9 @@ const FeaturesSVGWrapper = styled.div`
       width: 180%;
       height: 180%;
       position: relative;
-      top: -25rem;
-      left: -5rem;
+      top: -28rem;
+      left: 0%;
+
     }
   }
 
@@ -186,20 +215,23 @@ const FeaturesSVGWrapper = styled.div`
 
 const moveFeaturestextWrapper = keyframes`
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-52%);
   }
   50% {
-    transform: translateX(-49%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-52%);
   }
 `;
 
 const FeaturestextWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 53rem;
-  left: 48%;
+  top: 51rem;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   max-width: 90%;
@@ -218,24 +250,10 @@ const FeaturestextWrapper = styled.div`
       height: 180%;
       position: relative;
       top: -20rem;
-      left: -10.5rem;
     }
   }
 
-  /* Tablettes */
-  @media (max-width: 1285.60px) {
-    align-self: center;
-    text-align: center;
-    display: flex;
 
-    img {
-      width: 160%;
-      height: 160%;
-      position: relative;
-      top: -7rem;
-      left: -8rem;
-    }
-  }
 
   @media (max-width: 480px) {
     align-self: center;
@@ -246,9 +264,10 @@ const FeaturestextWrapper = styled.div`
       width: 180%;
       height: 180%;
       position: relative;
-      top: -35rem;
-      left: -4.6rem;
-
+      top: -37rem;
+      left: 1%;
     }
   }
+
+  
 `;
