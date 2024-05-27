@@ -22,7 +22,7 @@
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
-  
+
   ol, ul {
     list-style: none;
   }
@@ -501,5 +501,15 @@ button.active .text {
   }
   50% {
     transform: scale(1.5);
+  }
+}
+
+.logopres {
+
+  @media screen and (max-width: 480px){
+    margin-top: 2rem;
+    position: relative;
+    left: 0.8rem;
+
   }
 }

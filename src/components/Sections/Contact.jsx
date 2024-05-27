@@ -63,7 +63,9 @@ export default function Contact() {
     <Wrapper id="contact">
       {/* Utilisation du composant LogoWrapper autour de LogoIcon */}
       <LogoWrapper>
+      <div className="logopres">
         <LogoIcon />
+      </div>
       </LogoWrapper>
       <LogoContainer>
         <Slogan ref={sloganRef} className="extraBold font60">
@@ -71,11 +73,11 @@ export default function Contact() {
         </Slogan>
         <EmailContainer>
           <h4 className="extraBold font40 purpleColor">Email</h4>
-          <p className="semiBold">Players.contact@gmail.com</p>
+          <a href="mailto:Players.contact@gmail.com">Players.contact@gmail.com</a>
           <br />
           <br />
           <h4 className="extraBold font40 purpleColor">Social</h4>
-          <p className="semiBold">Facebook</p>
+          <p className="semiBold">Facebook </p>
           <p className="semiBold">Instagram</p>
           <p className="semiBold">Linkedin</p>
         </EmailContainer>

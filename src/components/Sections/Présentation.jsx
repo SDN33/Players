@@ -66,7 +66,7 @@ const ContentWrapper = styled.div`
   @media only screen and (max-width: 428px) {
     top: 7.5rem;
   }
-  
+
 `;
 
 const TextWrapper = styled.div`
@@ -233,13 +233,15 @@ export default function Présentation() {
         <video autoPlay loop muted style={{ transform: `translateY(${scrollPosition * 0.2}px)` }}>
           <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715719095/Untitled_design_6_h2crbz.mp4" type="video/mp4" />
         </video>
-        <ContentWrapper>
-          <LogoIcon />
+        <ContentWrapper >
+          <div className="logopres">
+            <LogoIcon />
+          </div>
           <TextWrapper id="présentation">
             <h1>Présentation</h1>
           </TextWrapper>
           <TextlongWrapper>
-            <p className="extraBold purpleColor">Bienvenue dans l'univers passionnant de PLAYERS !</p>
+            <p className="extraBold purpleColor">Bienvenue dans l'univers de PLAYERS ! </p>
             <br />
             <p>Rejoignez notre communauté dynamique de joueurs et vivez des expériences uniques.</p>
             <p>Découvrez des partenaires de jeu, prêts à partager des moments inoubliables lors de matchs près de chez vous !</p>
@@ -249,6 +251,8 @@ export default function Présentation() {
             <p className="extraBold purpleColor">Relevez des défis, développez vos compétences et élargissez votre réseau</p>
             <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
           </TextlongWrapper>
+          <br />
+          <br />
           <BtnWrapper>
             <FullButton title="S'inscrire à la newsletter" action={() => setShowPopup(true)} />
           </BtnWrapper>
