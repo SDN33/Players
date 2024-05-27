@@ -6,6 +6,7 @@ import FullButton from "../Buttons/FullButton";
 import QuotesIcon from "../../assets/svg/Quotes";
 import LogoIcon from "../../assets/svg/LogoLarge";
 import LightLogoIcon from "../../assets/svg/Logo";
+import StoreBadge from "../../assets/img/storebadge.png";
 
 const Popup = styled.div`
   position: fixed;
@@ -63,6 +64,18 @@ const LogoWrapper = styled.div`
   }
 `;
 
+
+const BadgeWrapper = styled.div`
+  position: relative;
+  top: -4rem;
+  left: -1%;
+
+  @media (max-width: 480px) {
+    position: relative;
+    top: -1rem;
+  }
+`;
+
 export default function Presentation() {
   const [showPopup, setShowPopup] = useState(false);
   const [email, setEmail] = useState("");
@@ -111,12 +124,15 @@ export default function Presentation() {
           <ResponsiveP className="font20 semiBold soustitre">Faire du sport n’a jamais été aussi challengeant</ResponsiveP>
           <br/>
           <ResponsiveH4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</ResponsiveH4>
-          <br/>
+          <br />
           <h6 className="purpleColor">👋🏻 ne manque pas le lancement prochainement !</h6>
           <h6 className="purpleColor">Rejoins notre newsletter 📧</h6>
           <BtnWrapper>
             <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
           </BtnWrapper>
+          <BadgeWrapper>
+            <img src={StoreBadge} alt="Store Badge" style={{ width: "100%", maxWidth: "17rem" }} />
+          </BadgeWrapper>
         </div>
       </LeftSide>
 

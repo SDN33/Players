@@ -227,6 +227,15 @@ export default function Présentation() {
     });
   };
 
+  useEffect(() => {
+    if (subscriptionSuccess) {
+      const timer = setTimeout(() => {
+        setSubscriptionSuccess(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [subscriptionSuccess]);
+
   return (
     <>
       <VideoWrapper>
