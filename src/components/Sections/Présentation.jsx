@@ -7,7 +7,7 @@ import Nossports from "../../assets/img/nossports.svg";
 
 const VideoWrapper = styled.div`
   padding-top: 2rem;
-  height: 140vh;
+  height: 145vh;
   width: 100%;
   position: relative;
   top: -9rem;
