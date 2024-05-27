@@ -23,6 +23,7 @@ const Popup = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 20rem;
 
   @media (max-width: 960px) {
     text-align: center;
@@ -46,6 +47,7 @@ const Popup = styled.div`
   input {
     padding: 0.5rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 8px;
     border: 1px solid #fff;
     width: 100%;
@@ -56,6 +58,19 @@ const Popup = styled.div`
     }
   }
 `;
+
+const validateEmail = (email) => {
+  // Expression régulière pour la validation de l'e-mail
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+const ErrorText = styled.p`
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+`;
+
 
 const LogoWrapper = styled.div`
   @media (max-width: 480px) {
@@ -76,14 +91,42 @@ const BadgeWrapper = styled.div`
   }
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const NewsletterLine = styled.h6`
+  animation: ${fadeIn} 5s ease-in-out infinite; /* Utilisation de l'animation fadeIn */
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: orange;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  width: 100%;
+`;
+
 export default function Presentation() {
   const [showPopup, setShowPopup] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("Inscription newsletter");
   const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
+  const [emailError, setEmailError] = useState("");
 
   const handleSubscribe = (event) => {
     event.preventDefault();
+    if (!validateEmail(email)) {
+      setEmailError("Veuillez saisir une adresse e-mail valide.");
+      return;
+    }
+    setEmailError(""); // Réinitialiser l'erreur si l'e-mail est valide
     fetch('https://formspree.io/f/xvoenaon', {
       method: 'POST',
       body: JSON.stringify({ email, message }),
@@ -114,6 +157,7 @@ export default function Presentation() {
     }
   }, [subscriptionSuccess]);
 
+
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
@@ -125,8 +169,8 @@ export default function Presentation() {
           <br/>
           <ResponsiveH4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</ResponsiveH4>
           <br />
-          <h6 className="purpleColor">👋🏻 ne manque pas le lancement prochainement !</h6>
-          <h6 className="purpleColor">Rejoins notre newsletter 📧</h6>
+          <NewsletterLine>👋🏻 ne manque pas le lancement prochainement !
+          <br />Rejoins notre newsletter 📧</NewsletterLine>
           <BtnWrapper>
             <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
           </BtnWrapper>
@@ -169,6 +213,7 @@ export default function Presentation() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              {emailError && <ErrorText>{emailError}</ErrorText>}
               <textarea
                 placeholder="Votre message"
                 value={message}

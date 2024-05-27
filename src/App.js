@@ -20,8 +20,9 @@ export default function App() {
         />
         <meta
           name="keywords"
-          content="football, basket-ball, tennis, padel, badminton, squash, sport, entraînement, fitness, compétition, équipe, match, club, athlète, jeunes, communauté, entraîneur, performance, technique, stratégie, formation, terrain, raquette, ballon, court, équipement, sportif, sports collectifs, sports individuels, loisirs sportifs"
+          content="football, basket-ball, tennis, padel, badminton, squash, sport, entraînement, compétition, équipe, match, club, athlète, jeunes, communauté, entraîneur, performance, technique, stratégie, formation, terrain, raquette, ballon, court, équipement, sportif, sports collectifs, sports individuels, loisirs sportifs"
         />
+
       </Helmet>
       <Landing />
     </>
