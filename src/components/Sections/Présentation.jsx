@@ -5,14 +5,13 @@ import LogoIcon from "../../assets/svg/LogoLarge";
 import LightLogoIcon from "../../assets/svg/Logo";
 import Nossports from "../../assets/img/nossports.svg";
 
-
 const VideoWrapper = styled.div`
-  height: 160vh;
+  padding-top: 2rem;
+  height: 140vh;
   width: 100%;
   position: relative;
   top: -9rem;
   overflow: hidden;
-
 
   video {
     width: 100%;
@@ -22,138 +21,90 @@ const VideoWrapper = styled.div`
     @media (max-width: 480px) {
       height: 80%;
       object-fit: cover;
+      height: 180vh;
+
     }
 
     @media only screen and (max-width: 428px) {
       height: 70%;
       object-fit: cover;
-    }
+      height: 180vh;
 
+    }
   }
 
-  /* Tablettes */
   @media (max-width: 1285.60px) {
     height: 140vh;
   }
 `;
 
-const TextWrapper = styled.section`
-  width: 100%;
-  text-align: center;
+const ContentWrapper = styled.div`
   position: absolute;
-  bottom: 51rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 8rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-
-  /* Tablettes */
-  @media (max-width: 1285.60px) {
-    bottom: 52rem;
-  }
+  padding: -1 1rem;
 
   @media (max-width: 960px) {
-    bottom: 49rem;
+    top: 5rem;
   }
 
   @media (max-width: 480px) {
-    bottom: 50rem;
-    color: #FF914D;
+    top: 10rem;
   }
 
   @media only screen and (max-width: 428px) {
-    top: 14rem;
+    top: 7.5rem;
   }
 `;
 
-const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 41rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
-
-  /* Tablettes */
-  @media (max-width: 1285.60px) {
-    bottom: 42rem;
-  }
-
-  @media (max-width: 960px) {
-    bottom: 39rem;
-  }
-
-  @media (max-width: 480px) {
-    display: none;
-`;
-
-const TextlongWrapper = styled.section`
+const TextWrapper = styled.div`
   width: 100%;
   text-align: center;
-  position: absolute;
-  bottom: 22rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-bottom: 2rem;
+`;
+
+const TextlongWrapper = styled.div`
+  width: 100%;
+  text-align: center;
   font-size: 1.5rem;
   font-weight: 800;
   padding: 0 1rem;
+  margin-bottom: 2rem;
 
-  /* Tablettes */
   @media (max-width: 1285.60px) {
-    bottom: 20rem;
     font-size: 1.3rem;
-
   }
 
   @media (max-width: 960px) {
-    bottom: 16rem;
     font-size: 1.2rem;
   }
 
   @media (max-width: 480px) {
-    bottom: 13rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    bottom: 1rem;
   }
 
   @media only screen and (max-width: 428px) {
     top: 20rem;
-  }
+    font-size: 1rem;
 
+  }
 `;
 
-
 const BtnWrapper = styled.div`
-  width: 100%;  /* Set width to 100% to take the full width of the parent */
-  max-width: 190px;  /* Maximum width of the button */
-  position: absolute;
-  top: 55rem;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: 190px;
   text-align: center;
   font-size: 1rem;
   font-style: italic;
   font-family: 'PublicSans', sans-serif;
-
-  /* Tablettes */
-  @media (max-width: 1285.60px) {
-    top: 60rem;
-
-  }
-
-  @media (max-width: 960px) {
-    top: 54rem;
-    padding: 0 1rem;
-  }
-
-  @media (max-width: 480px) {
-    top: 55rem;
-  }
-
-  @media only screen and (max-width: 428px) {
-    top: 55rem;
-  }
-
 `;
 
 const NossportsWrapper = styled.div`
@@ -193,8 +144,6 @@ const NossportsWrapper = styled.div`
   }
 `;
 
-
-
 const Popup = styled.div`
   position: fixed;
   top: 50%;
@@ -206,24 +155,18 @@ const Popup = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
   border: 1px solid #fff;
-  align-items: center;
-  justify-content: center;
   display: flex;
-  flex-direction: column; /* Pour placer les éléments verticalement */
+  flex-direction: column;
+  align-items: center;
 
   button {
     margin-top: 1rem;
     max-width: 10rem;
     color: var(--bg);
     font-weight: 700;
-    /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
     background: linear-gradient(90deg, rgba(255,49,49,1) 0%, rgba(255,145,77,1) 100%);
     padding: .8em 1.4em;
-    position: relative;
-    isolation: isolate;
-    box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
     border-radius: 0.66em;
-    scale: 1;
     transition: all var(--spring-duration) var(--spring-easing);
     width: 100%;
   }
@@ -234,13 +177,15 @@ const Popup = styled.div`
     border-radius: 8px;
     border: 1px solid #fff;
     width: 100%;
-
+  }
 `;
-
-
 
 export default function Présentation() {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("Inscription newsletter");
+  const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -254,17 +199,11 @@ export default function Présentation() {
     };
   }, []);
 
-  const [showPopup, setShowPopup] = useState(false);
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("Inscription newsletter"); // Définir automatiquement le message
-  const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
-
   const handleSubscribe = (event) => {
-    event.preventDefault(); // Empêche le rechargement de la page par défaut
-    // Envoie la requête POST vers Formspree
+    event.preventDefault();
     fetch('https://formspree.io/f/xvoenaon', {
       method: 'POST',
-      body: JSON.stringify({ email, message }), // Envoyez l'e-mail et le message
+      body: JSON.stringify({ email, message }),
       headers: {
         'Content-Type': 'application/json'
       }
@@ -273,7 +212,7 @@ export default function Présentation() {
       if (response.ok) {
         console.log('Subscription successful!');
         setShowPopup(false);
-        setSubscriptionSuccess(true); // Affiche l'alerte de succès
+        setSubscriptionSuccess(true);
       } else {
         console.error('There was an error subscribing!');
       }
@@ -289,26 +228,26 @@ export default function Présentation() {
         <video autoPlay loop muted style={{ transform: `translateY(${scrollPosition * 0.2}px)` }}>
           <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715719095/Untitled_design_6_h2crbz.mp4" type="video/mp4" />
         </video>
-        <LogoWrapper>
+        <ContentWrapper>
           <LogoIcon />
-        </LogoWrapper>
-        <TextWrapper id="présentation">
-          <h1>Présentation</h1>
-        </TextWrapper>
-        <TextlongWrapper>
-          <p className="extraBold purpleColor">Bienvenue dans l'univers passionnant de PLAYERS !</p>
-          <br />
-          <p>Rejoignez notre communauté dynamique de joueurs et vivez des expériences uniques.</p>
-          <p>Découvrez des partenaires de jeu, prêts à partager des moments inoubliables lors de matchs près de chez vous !</p>
-          <p>Que vous soyez un amateur de football, basketball ou d'un sport de raquette, vous trouverez votre place parmi nous.</p>
-          <p>Rencontrez de nouvelles personnes et dépassez-vous sur le terrain.</p>
-          <br />
-          <p className="extraBold purpleColor">Relevez des défis, développez vos compétences et élargissez votre réseau</p>
-          <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
-        </TextlongWrapper>
-        <BtnWrapper>
-          <FullButton title="S'inscrire à la newsletter" action={() => setShowPopup(true)} />
-        </BtnWrapper>
+          <TextWrapper id="présentation">
+            <h1>Présentation</h1>
+          </TextWrapper>
+          <TextlongWrapper>
+            <p className="extraBold purpleColor">Bienvenue dans l'univers passionnant de PLAYERS !</p>
+            <br />
+            <p>Rejoignez notre communauté dynamique de joueurs et vivez des expériences uniques.</p>
+            <p>Découvrez des partenaires de jeu, prêts à partager des moments inoubliables lors de matchs près de chez vous !</p>
+            <p>Que vous soyez un amateur de football, basketball ou d'un sport de raquette, vous trouverez votre place parmi nous.</p>
+            <p>Rencontrez de nouvelles personnes et dépassez-vous sur le terrain.</p>
+            <br />
+            <p className="extraBold purpleColor">Relevez des défis, développez vos compétences et élargissez votre réseau</p>
+            <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
+          </TextlongWrapper>
+          <BtnWrapper>
+            <FullButton title="S'inscrire à la newsletter" action={() => setShowPopup(true)} />
+          </BtnWrapper>
+        </ContentWrapper>
       </VideoWrapper>
       <NossportsWrapper style={{ transform: `translateY(${scrollPosition * 0.1}px)` }}>
         <img src={Nossports} alt="Nossports" />
@@ -329,7 +268,7 @@ export default function Présentation() {
               placeholder="Votre message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              style={{ display: "none" }} // Masquer automatiquement le champ de message
+              style={{ display: "none" }}
             />
             <button onClick={handleSubscribe}>Valider</button>
             <button onClick={() => setShowPopup(false)}>Fermer</button>
