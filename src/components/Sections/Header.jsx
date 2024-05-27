@@ -50,7 +50,7 @@ const Popup = styled.div`
     margin-bottom: 1rem;
     border-radius: 8px;
     border: 1px solid #fff;
-    width: 100%;
+    width: 70%;
 
     @media (max-width: 960px) {
       text-align: center;
