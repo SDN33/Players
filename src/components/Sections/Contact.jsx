@@ -107,7 +107,7 @@ const Wrapper = styled.section`
   }
 
   @media only screen and (max-width: 1640px) {
-    height: 60vh;
+    height: 80vh;
   }
 
 `;

@@ -203,7 +203,7 @@ const LeftSide = styled.div`
 
   @media (max-width: 480px) {
     width: 90%;
-    margin-top: -0.1rem;
+    margin-top: 2rem;
     text-align: center;
   }
   /* iPad Air (10.9 pouces, résolution 1640 x 2360 pixels) */

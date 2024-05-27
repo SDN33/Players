@@ -40,10 +40,6 @@ const VideoWrapper = styled.div`
   @media only screen and (max-width: 1080px) {
     height: 150vh;
   }
-
-  @media only screen and (max-width: 1640px) {
-    height: 120vh
-  }
 `;
 
 const ContentWrapper = styled.div`
@@ -70,11 +66,7 @@ const ContentWrapper = styled.div`
   @media only screen and (max-width: 428px) {
     top: 7.5rem;
   }
-
-  @media only screen and (max-width: 1640px) {
-    height: 110vh
-  }
-
+  
 `;
 
 const TextWrapper = styled.div`
@@ -141,11 +133,6 @@ const NossportsWrapper = styled.div`
       position: relative;
       top: -5rem;
     }
-
-    @media only screen and (max-width: 1640px) {
-      margin-top: -35rem;
-      margin-bottom: -25rem;
-    }
   }
 
   @media (max-width: 960px) {
@@ -159,10 +146,6 @@ const NossportsWrapper = styled.div`
     margin-bottom: -22rem;
     margin-top: -11rem;
     background-color: transparent;
-  }
-
-  @media only screen and (max-width: 1640px) {
-     height: 70vh;
   }
 `;
 
