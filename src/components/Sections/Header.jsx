@@ -193,7 +193,7 @@ const Wrapper = styled.section`
   padding-top: 80px;
   width: 100%;
   min-height: 840px;
-  margin-top: 3rem;
+  margin-top: 4rem;
 
   @media (max-width: 480px) {
     align-items: center;

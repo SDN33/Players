@@ -72,7 +72,7 @@ const ContentWrapper = styled.div`
 const TextWrapper = styled.div`
   width: 100%;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: rem;
 `;
 
 const TextlongWrapper = styled.div`
