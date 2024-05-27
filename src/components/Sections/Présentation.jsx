@@ -36,6 +36,10 @@ const VideoWrapper = styled.div`
   @media (max-width: 1285.60px) {
     height: 140vh;
   }
+
+  @media only screen and (max-width: 1080px) {
+    height: 150vh;
+  }
 `;
 
 const ContentWrapper = styled.div`
