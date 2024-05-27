@@ -215,13 +215,13 @@ const FeaturesSVGWrapper = styled.div`
 
 const moveFeaturestextWrapper = keyframes`
   0% {
-    transform: translateX(-52%);
-  }
-  50% {
     transform: translateX(-50%);
   }
+  50% {
+    transform: translateX(-48%);
+  }
   100% {
-    transform: translateX(-52%);
+    transform: translateX(-50%);
   }
 `;
 
