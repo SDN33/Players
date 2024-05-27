@@ -62,7 +62,7 @@ export default function Contact() {
       </LogoWrapper>
       <LogoContainer>
         <Slogan ref={sloganRef} className="extraBold font60">
-          Contactez nous !
+          Contact
         </Slogan>
         <EmailContainer>
           <h4 className="extraBold font40 purpleColor">Email</h4>
@@ -123,4 +123,3 @@ const Slogan = styled.h4`
   }
 
 `;
-
