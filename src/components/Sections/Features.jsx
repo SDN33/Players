@@ -76,7 +76,7 @@ export default function Features() {
   return (
     <BodyWrapper>
       <VideoWrapper id="Features">
-        <video autoPlay loop muted>
+        <video autoPlay loop muted playsInline>
           <source src="https://res.cloudinary.com/daroyxenr/video/upload/q_auto:best/v1715892911/Untitled_design_4_qi9lqr.mp4" type="video/mp4" />
         </video>
         <LogoWrapper>
@@ -269,5 +269,5 @@ const FeaturestextWrapper = styled.div`
     }
   }
 
-  
+
 `;
