@@ -72,7 +72,7 @@ const BadgeWrapper = styled.div`
 
   @media (max-width: 480px) {
     position: relative;
-    top: -2rem;
+    top: -5rem;
   }
 `;
 
@@ -196,9 +196,9 @@ const Wrapper = styled.section`
   margin-top: 3rem;
 
   @media (max-width: 480px) {
-    padding-top: 4rem;
     align-items: center;
     text-align: center;
+    padding-top: 100px;
   }
 
   @media (max-width: 960px) {
