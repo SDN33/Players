@@ -99,7 +99,7 @@ export default function Contact() {
           <h4 className="extraBold font40 purpleColor">Social</h4>
           <p className="semiBold">Facebook </p>
           <p className="semiBold">Instagram</p>
-          <p className="semiBold">Linkedin</p>
+          <a className="semiBold" href="https://www.linkedin.com/in/stephane-dn">Linkedin</a>
         </EmailContainer>
       </LogoContainer>
       <ContactWrapper>
