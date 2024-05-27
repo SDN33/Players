@@ -19,7 +19,7 @@ export default function Contact() {
               <LogoImg />
             </Link>
             <StyleP className="whiteColor font13">
-              © {getCurrentYear()} - PLAYERS<span className="purpleColor font13"></span> - All Right Reserved
+              © {getCurrentYear()} - PLAYERS<span className="purpleColor font13"></span> - Tout droits réservés
             </StyleP>
 
             <Link className="whiteColor animate pointer font13" to="home" smooth={true} offset={-80}>
