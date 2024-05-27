@@ -16,25 +16,9 @@ const ContactWrapper = styled.div`
   width: 60%;
   z-index: 1 ; /* Assurez-vous que le z-index est supérieur à celui du footer */
 
-  @media (max-width: 960px) {
-    left: 66%;
-    display: none;
-
-  }
-
-  @media (max-width: 480px) {
-    img {
-      display: none;
-      top: -10%;
-
-    }
-  }
-
   @media only screen and (max-width: 1640px) {
     left: 70%;
     top: -120%;
-
-
   }
 
   @media only screen and (max-width: 1280px) {
@@ -49,6 +33,23 @@ const ContactWrapper = styled.div`
       top: 6rem;
       left: 0%;
     }
+
+  @media (max-width: 960px) {
+    left: 66%;
+    display: none;
+
+  }
+
+  @media (max-width: 480px) {
+    img {
+      display: none;
+      top: -10%;
+
+    }
+  }
+
+
+
 `;
 
 export default function Contact() {

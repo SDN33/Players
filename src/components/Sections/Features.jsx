@@ -61,6 +61,13 @@ top: 80rem;
 width: 100%;
 z-index: 1;
 
+@media (max-width: 960px) {
+  position: relative;
+  top: 22rem;
+  left: 19%;
+  width: 60%;
+
+
 @media (max-width: 480px) {
   position: relative;
   top: -2rem;
@@ -117,22 +124,27 @@ const BodyWrapper = styled.section`
   margin-bottom: -20rem;
   height: 280vh; /* 100% de la hauteur de la fenêtre visible */
 
-  @media (max-width: 960px) {
-    height: 200vh;
-  }
+
 
   /* Tablettes */
   @media (max-width: 1285.60px) {
     height: 150vh;
   }
 
-  @media (max-width: 480px) {
-    height: 140vh;
-  }
-
   @media only screen and (max-width: 1280px) {
     height: 280vh;
   }
+
+  @media (max-width: 960px) {
+    height: 170vh;
+  }
+
+
+  @media (max-width: 480px) {
+    height: 130vh;
+  }
+
+
 
 
 
@@ -169,20 +181,6 @@ const FeaturesSVGWrapper = styled.div`
   width: auto;
   height: auto;
 
-  @media (max-width: 960px) {
-    align-self: center;
-    text-align: center;
-    display: flex;
-
-    img {
-      width: 180%;
-      height: 180%;
-      position: relative;
-      top: -15rem;
-      left: -10.5rem;
-    }
-  }
-
   /* Tablettes */
   @media (max-width: 1285.60px) {
     align-self: center;
@@ -196,6 +194,37 @@ const FeaturesSVGWrapper = styled.div`
       align-self: center;
       display: flex;
 
+    }
+  }
+
+  @media only screen and (max-width: 1280px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 180%;
+      height: 180%;
+      position: relative;
+      top: 0rem;
+      left: 0%;
+    }
+  }
+
+
+
+
+  @media (max-width: 960px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 180%;
+      height: 180%;
+      position: relative;
+      top: -15rem;
+      left: 0rem;
     }
   }
 
@@ -214,19 +243,6 @@ const FeaturesSVGWrapper = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1280px) {
-    align-self: center;
-    text-align: center;
-    display: flex;
-
-    img {
-      width: 180%;
-      height: 180%;
-      position: relative;
-      top: 0rem;
-      left: 0%;
-    }
-  }
 
 
 `;
