@@ -241,10 +241,9 @@ const Wrapper = styled.section`
   min-height: 840px;
   margin-top: 4rem;
 
-  @media (max-width: 480px) {
-    align-items: center;
-    text-align: center;
-    padding-top: 100px;
+  h6 {
+    position: relative;
+    top: -6rem;
   }
 
   @media (max-width: 960px) {
@@ -252,10 +251,15 @@ const Wrapper = styled.section`
     margin-top: 5rem;
   }
 
-  h6 {
-    position: relative;
-    top: -6rem;
+  @media (max-width: 480px) {
+    align-items: center;
+    text-align: center;
+    padding-top: 140px;
+    margin-top: 4rem;
+
   }
+
+
 `;
 
 const LeftSide = styled.div`
