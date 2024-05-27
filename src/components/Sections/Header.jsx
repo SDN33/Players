@@ -67,12 +67,12 @@ const LogoWrapper = styled.div`
 
 const BadgeWrapper = styled.div`
   position: relative;
-  top: -4rem;
+  top: -5rem;
   left: -1%;
 
   @media (max-width: 480px) {
     position: relative;
-    top: -1rem;
+    top: -2rem;
   }
 `;
 
