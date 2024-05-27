@@ -22,6 +22,9 @@ const Popup = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
   border: 1px solid #ccc;
+  width: 40rem;
+  text-align: center;
+
 `;
 
 const Button = styled.button`
@@ -59,9 +62,11 @@ export default function CookiePopup() {
       <Overlay />
       <Popup>
         <h2>Consentement aux cookies</h2>
-        <p>
-          Nous utilisons des cookies pour améliorer votre expérience sur notre site. Acceptez-vous l'utilisation des cookies ?
+        <p className="purpleColor">
+          Nous utilisons des cookies pour améliorer votre expérience sur notre site.
         </p>
+        <strong>Acceptez-vous l'utilisation des cookies ?</strong>
+
         <Button backgroundColor="#4CAF50" onClick={acceptCookies}>Accepter</Button>
         <Button backgroundColor="#f44336" onClick={refuseCookies}>Refuser</Button>
       </Popup>
