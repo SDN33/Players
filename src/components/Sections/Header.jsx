@@ -96,6 +96,7 @@ export default function Presentation() {
 
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
+
       <LeftSide className="flexCenter">
         <div style={{ textAlign: 'center' }}>
           <LogoWrapper>

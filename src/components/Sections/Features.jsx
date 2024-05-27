@@ -177,7 +177,7 @@ const FeaturesSVGWrapper = styled.div`
       left: -5rem;
     }
   }
-  
+
 
 `;
 
