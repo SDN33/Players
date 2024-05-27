@@ -105,6 +105,9 @@ const BodyWrapper = styled.section`
     height: 140vh;
   }
 
+  @media only screen and (max-width: 1640px) {
+    height: 130vh;
+  }
 `;
 
 const VideoWrapper = styled.div`
@@ -178,6 +181,19 @@ const FeaturesSVGWrapper = styled.div`
     }
   }
 
+  @media only screen and (max-width: 1640px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 180%;
+      height: 180%;
+      position: relative;
+      top: -15rem;
+      left: -10.5rem;
+    }
+
 `;
 
 const moveFeaturestextWrapper = keyframes`
@@ -247,4 +263,19 @@ const FeaturestextWrapper = styled.div`
 
     }
   }
+
+  @media only screen and (max-width: 1640px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+
+    img {
+      width: 180%;
+      height: 180%;
+      position: relative;
+      top: -20rem;
+      left: -10rem;
+    }
+
 `;

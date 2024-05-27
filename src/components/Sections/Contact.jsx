@@ -25,6 +25,11 @@ const ContactWrapper = styled.div`
       display: none;
     }
   }
+
+  @media only screen and (max-width: 1640px) {
+    left: 70%;
+    top: 10%;
+  }
 `;
 
 export default function Contact() {
@@ -99,6 +104,10 @@ const Wrapper = styled.section`
   @media (max-width: 960px) {
     height: 100vh;
     left: -6rem;
+  }
+
+  @media only screen and (max-width: 1640px) {
+    height: 60vh;
   }
 
 `;

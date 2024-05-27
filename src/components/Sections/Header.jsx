@@ -206,6 +206,11 @@ const LeftSide = styled.div`
     margin-top: -0.1rem;
     text-align: center;
   }
+  /* iPad Air (10.9 pouces, résolution 1640 x 2360 pixels) */
+  @media only screen and (max-width: 1640px) {
+    height: 88vh
+  }
+
 `;
 
 const RightSide = styled.div`
@@ -216,6 +221,8 @@ const RightSide = styled.div`
   @media (max-width: 960px) {
     display: none;
   }
+
+
 `;
 
 const BtnWrapper = styled.div`
