@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 // Components
 import FullButton from "../Buttons/FullButton";
@@ -57,13 +57,11 @@ const Popup = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-
   @media (max-width: 480px) {
     position: relative;
     left: 1rem;
   }
 `;
-
 
 export default function Presentation() {
   const [showPopup, setShowPopup] = useState(false);
@@ -94,9 +92,17 @@ export default function Presentation() {
     });
   };
 
+  useEffect(() => {
+    if (subscriptionSuccess) {
+      const timer = setTimeout(() => {
+        setSubscriptionSuccess(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [subscriptionSuccess]);
+
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
-
       <LeftSide className="flexCenter">
         <div style={{ textAlign: 'center' }}>
           <LogoWrapper>
@@ -135,34 +141,34 @@ export default function Presentation() {
         </ImageWrapper>
       </RightSide>
       <div>
-      {showPopup && (
-        <div onClick={() => setShowPopup(false)} className="popup-background">
-          <Popup onClick={(e) => e.stopPropagation()}>
-            <LightLogoIcon />
-            <p>👋🏻 Rejoins notre newsletter! 📧</p>
-            <input
-              type="email"
-              placeholder="Entrez votre adresse e-mail"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <textarea
-              placeholder="Votre message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              style={{ display: "none" }}
-            />
-            <button onClick={handleSubscribe}>Valider</button>
-            <button onClick={() => setShowPopup(false)}>Fermer</button>
-          </Popup>
-        </div>
-      )}
-      {subscriptionSuccess && (
-        <div className="subscription-alert">
-          <p>Votre inscription à la newsletter a été effectuée avec succès !</p>
-        </div>
-      )}
-    </div>
+        {showPopup && (
+          <div onClick={() => setShowPopup(false)} className="popup-background">
+            <Popup onClick={(e) => e.stopPropagation()}>
+              <LightLogoIcon />
+              <p>👋🏻 Rejoins notre newsletter! 📧</p>
+              <input
+                type="email"
+                placeholder="Entrez votre adresse e-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <textarea
+                placeholder="Votre message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                style={{ display: "none" }}
+              />
+              <button onClick={handleSubscribe}>Valider</button>
+              <button onClick={() => setShowPopup(false)}>Fermer</button>
+            </Popup>
+          </div>
+        )}
+        {subscriptionSuccess && (
+          <div className="subscription-alert">
+            <p>Votre inscription à la newsletter a été effectuée avec succès 👍🏻</p>
+          </div>
+        )}
+      </div>
     </Wrapper>
   );
 }
@@ -222,8 +228,6 @@ const RightSide = styled.div`
   @media (max-width: 960px) {
     display: none;
   }
-
-
 `;
 
 const BtnWrapper = styled.div`
@@ -289,19 +293,14 @@ const BackgroundSVG = styled.img`
   }
 `;
 
-
 const ResponsiveP = styled.p`
-
-
   @media (max-width: 480px) {
     font-size: 16px;
     position: relative;
-
   }
 `;
 
 const ResponsiveH4 = styled.h4`
-
   @media (max-width: 480px) {
     font-size: 40px;
     max-width: 70%;
