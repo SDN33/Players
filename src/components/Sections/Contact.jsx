@@ -36,6 +36,19 @@ const ContactWrapper = styled.div`
 
 
   }
+
+  @media only screen and (max-width: 1280px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 180%;
+      height: 180%;
+      position: relative;
+      top: 6rem;
+      left: 0%;
+    }
 `;
 
 export default function Contact() {

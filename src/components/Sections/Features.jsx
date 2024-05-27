@@ -130,6 +130,10 @@ const BodyWrapper = styled.section`
     height: 140vh;
   }
 
+  @media only screen and (max-width: 1280px) {
+    height: 280vh;
+  }
+
 
 
 `;
@@ -207,6 +211,20 @@ const FeaturesSVGWrapper = styled.div`
       top: -28rem;
       left: 0%;
 
+    }
+  }
+
+  @media only screen and (max-width: 1280px) {
+    align-self: center;
+    text-align: center;
+    display: flex;
+
+    img {
+      width: 180%;
+      height: 180%;
+      position: relative;
+      top: 0rem;
+      left: 0%;
     }
   }
 
