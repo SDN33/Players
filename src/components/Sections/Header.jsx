@@ -138,10 +138,11 @@ export default function Presentation() {
 
       <RightSide>
         <ImageWrapper>
-          <video autoPlay loop muted style={{ borderRadius: "45px", width: "45%" }}>
-            <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <video autoPlay loop muted playsInline style={{ borderRadius: "45px", width: "45%" }}>
+          <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
           <BackgroundSVG src="https://res.cloudinary.com/daroyxenr/image/upload/v1715699281/Untitled_design_ysobj2.svg" alt="Background SVG" />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>

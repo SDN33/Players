@@ -49,7 +49,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  top: 8rem;
+  top: 12rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -239,9 +239,19 @@ export default function Présentation() {
   return (
     <>
       <VideoWrapper>
-        <video autoPlay loop muted style={{ transform: `translateY(${scrollPosition * 0.2}px)` }}>
-          <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715719095/Untitled_design_6_h2crbz.mp4" type="video/mp4" />
-        </video>
+      <video
+         autoPlay
+         loop
+         muted
+         playsInline
+         style={{ transform: `translateY(${scrollPosition * 0.2}px)` }}
+       >
+         <source
+           src="https://res.cloudinary.com/daroyxenr/video/upload/v1715719095/Untitled_design_6_h2crbz.mp4"
+           type="video/mp4"
+         />
+         Your browser does not support the video tag.
+       </video>
         <ContentWrapper >
           <div className="logopres">
             <LogoIcon />

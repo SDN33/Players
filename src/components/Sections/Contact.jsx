@@ -13,7 +13,7 @@ const ContactWrapper = styled.div`
   position: relative;
   left: 50%;
   top: -10rem;
-  width: 80%;
+  width: 60%;
   z-index: 1 ; /* Assurez-vous que le z-index est supérieur à celui du footer */
 
   @media (max-width: 960px) {
@@ -32,7 +32,7 @@ const ContactWrapper = styled.div`
 
   @media only screen and (max-width: 1640px) {
     left: 70%;
-    top: -140%;
+    top: -120%;
 
 
   }

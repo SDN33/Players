@@ -88,7 +88,7 @@ const BodyWrapper = styled.section`
   background-color: #060606;
   height: 200vh;
   position: relative;
-  top: 18rem;
+  top: 17rem;
   margin-bottom: -20rem;
   height: 280vh; /* 100% de la hauteur de la fenêtre visible */
 
@@ -126,7 +126,7 @@ const VideoWrapper = styled.div`
 
 const FeaturesSVGWrapper = styled.div`
   position: absolute;
-  top: 35rem;
+  top: 38rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -198,7 +198,7 @@ const moveFeaturestextWrapper = keyframes`
 
 const FeaturestextWrapper = styled.div`
   position: absolute;
-  top: 50rem;
+  top: 53rem;
   left: 48%;
   transform: translate(-50%, -50%);
   z-index: 1;
