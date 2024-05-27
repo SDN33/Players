@@ -10,25 +10,31 @@ const LogoWrapper = styled.div`
 `;
 
 const ContactWrapper = styled.div`
-  position: absolute;
-  bottom: -2rem;
+  position: relative;
   left: 50%;
-  width: 90%;
-  z-index: 0; /* Assurez-vous que le z-index est supérieur à celui du footer */
+  top: -10rem;
+  width: 80%;
+  z-index: 1 ; /* Assurez-vous que le z-index est supérieur à celui du footer */
 
   @media (max-width: 960px) {
     left: 66%;
+    display: none;
+
   }
 
   @media (max-width: 480px) {
     img {
       display: none;
+      top: -10%;
+
     }
   }
 
   @media only screen and (max-width: 1640px) {
     left: 70%;
-    top: 10%;
+    top: -140%;
+
+
   }
 `;
 

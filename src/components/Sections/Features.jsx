@@ -156,11 +156,14 @@ const FeaturesSVGWrapper = styled.div`
     display: flex;
 
     img {
-      width: 150%;
-      height: 150%;
+      width: 160%;
+      height: 160%;
       position: relative;
       top: -4rem;
-      left: -8.5rem;
+      left: -8rem;
+      align-self: center;
+      display: flex;
+
     }
   }
 
@@ -226,11 +229,11 @@ const FeaturestextWrapper = styled.div`
     display: flex;
 
     img {
-      width: 150%;
-      height: 150%;
+      width: 160%;
+      height: 160%;
       position: relative;
-      top: -6rem;
-      left: -8.5rem;
+      top: -7rem;
+      left: -8rem;
     }
   }
 
