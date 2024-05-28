@@ -174,10 +174,10 @@ export default function Presentation() {
           <BadgeWrapper>
             <img src={StoreBadge} alt="App Store Badges" style={{ width: "100%", maxWidth: "17rem" }} />
           </BadgeWrapper>
-          <NewsletterLine>👋🏻 ne manque pas le lancement prochainement !
+          <NewsletterLine>👋🏻 Ne manque pas le lancement prochainement !
           <br />Rejoins notre newsletter 📧</NewsletterLine>
           <BtnWrapper>
-            <FullButton title="S'inscrire" action={() => setShowPopup(true)} alt="S'inscrire à la newsletter" />
+            <FullButton title="Inscris toi !" action={() => setShowPopup(true)} alt="S'inscrire à la newsletter" />
           </BtnWrapper>
 
         </div>
