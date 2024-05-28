@@ -258,7 +258,7 @@ const Wrapper = styled.section`
     align-items: center;
     text-align: center;
     padding-top: 110px;
-    margin-top: 6rem;
+    margin-top: 5rem;
 
   }
 
