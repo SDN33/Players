@@ -15,7 +15,7 @@ const LegalPopup = ({ onClose }) => {
           <br />
 
           <br />Contact :
-          <br />Email : Players.contact@gmail.com
+          <br />Email :contactplyrs@gmail.com
           <br />
           <br />Finalité du site :
           <br />Ce site web sert uniquement de vitrine et de pré-inscription pour le lancement de l'application mobile "Players". Il permet aux visiteurs de découvrir notre projet et de s'inscrire à notre newsletter pour être informés des dernières actualités.

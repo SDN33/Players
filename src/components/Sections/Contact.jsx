@@ -93,7 +93,7 @@ export default function Contact() {
         </Slogan>
         <EmailContainer>
           <h4 className="extraBold font40 purpleColor">Email</h4>
-          <a href="mailto:Players.contact@gmail.com">Players.contact@gmail.com</a>
+          <a href="mailto:contactplyrs@gmail.com">contactplyrs@gmail.com</a>
           <br />
           <br />
           <h4 className="extraBold font40 purpleColor">Social</h4>
