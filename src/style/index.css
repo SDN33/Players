@@ -328,7 +328,7 @@
   }
 
   .slogan {
-    color: #F5F5F5;
+    color: white;
     position: relative;
     top: -7rem;
   }
@@ -341,12 +341,14 @@
     position: relative;
     left: -1em;
     bottom: -0.5em;
+    font-weight: 500;
   }
 
   .autheurname {
     font-size: 0.9rem;
     position: relative;
     bottom: -0.3em;
+    font-weight: 600;
   }
 
   :root {

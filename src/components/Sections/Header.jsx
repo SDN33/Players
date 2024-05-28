@@ -96,6 +96,7 @@ const BadgeWrapper = styled.div`
 const fadeIn = keyframes`
   from {
     opacity: 0;
+
   }
   to {
     opacity: 1;
@@ -108,7 +109,7 @@ const NewsletterLine = styled.h6`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: orange;
+  color: #FF4235;
   font-weight: 700;
   font-size: 0.8rem;
   margin-bottom: 1rem;
@@ -196,8 +197,9 @@ export default function Presentation() {
               <QuotesIcon />
             </QuotesWrapper>
             <div>
-              <p className="font15 whiteColor">
-                <em className="quotetext">"Après ma retraite sportive, j'ai ressenti un vide sans l'adrénaline des compétitions et la camaraderie des entraînements. Alors j'ai créé Players !"</em>
+              <p className="font15 whiteColor textCenter">
+                <em className="quotetext">"Après ma retraite sportive, j'ai ressenti un vide sans l'adrénaline des compétitions et la camaraderie des entraînements.
+                Alors j'ai créé Players !"</em>
               </p>
               <p className="font13 orangeColor textRight autheurname" style={{marginTop: '10px'}}>Stéphane Dei-negri | Créateur de Players</p>
             </div>

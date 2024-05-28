@@ -61,7 +61,7 @@ export default function CookiePopup() {
     <>
       <Overlay />
       <Popup>
-        <h2>Consentement aux cookies</h2>
+        <h3><strong>Consentement aux cookies</strong></h3>
         <p className="purpleColor">
           Nous utilisons des cookies pour améliorer votre expérience sur notre site.
         </p>
