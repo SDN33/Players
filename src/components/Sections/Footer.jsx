@@ -101,6 +101,11 @@ const PopupContainer = styled.div`
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 999;
+
+  @media (max-width: 550px) {
+    width: 90%;
+    height: auto;
+  }
 `;
 
 const PopupContent = styled.div`
