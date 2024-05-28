@@ -109,7 +109,7 @@ const NewsletterLine = styled.h6`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FF4235;
+  color: orange;
   font-weight: 700;
   font-size: 0.8rem;
   margin-bottom: 1rem;
