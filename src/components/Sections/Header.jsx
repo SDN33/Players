@@ -82,12 +82,14 @@ const LogoWrapper = styled.div`
 
 const BadgeWrapper = styled.div`
   position: relative;
-  top: -5rem;
+  top: -9.5rem;
   left: -1%;
+
 
   @media (max-width: 480px) {
     position: relative;
-    top: -5rem;
+    top: -9rem;
+
   }
 `;
 
@@ -169,14 +171,15 @@ export default function Presentation() {
           <br/>
           <ResponsiveH4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</ResponsiveH4>
           <br />
+          <BadgeWrapper>
+            <img src={StoreBadge} alt="Store Badge" style={{ width: "100%", maxWidth: "17rem" }} />
+          </BadgeWrapper>
           <NewsletterLine>👋🏻 ne manque pas le lancement prochainement !
           <br />Rejoins notre newsletter 📧</NewsletterLine>
           <BtnWrapper>
             <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
           </BtnWrapper>
-          <BadgeWrapper>
-            <img src={StoreBadge} alt="Store Badge" style={{ width: "100%", maxWidth: "17rem" }} />
-          </BadgeWrapper>
+
         </div>
       </LeftSide>
 
@@ -254,8 +257,8 @@ const Wrapper = styled.section`
   @media (max-width: 480px) {
     align-items: center;
     text-align: center;
-    padding-top: 140px;
-    margin-top: 4rem;
+    padding-top: 110px;
+    margin-top: 6rem;
 
   }
 
@@ -301,7 +304,7 @@ const BtnWrapper = styled.div`
   position: relative;
   left: 49%;
   transform: translateX(-50%);
-  top: -80px;
+  top: -220px;
 
   @media (max-width: 480px) {
     position: relative;
