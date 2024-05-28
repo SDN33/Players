@@ -7,6 +7,7 @@ import Features from "../components/Sections/Features";
 import Contact from "../components/Sections/Contact";
 import Footer from "../components/Sections/Footer";
 import CookiePopup from "../components/Elements/Cookies"; // Importez le composant CookiePopup
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function Landing() {
   return (
