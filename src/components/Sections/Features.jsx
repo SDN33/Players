@@ -162,6 +162,8 @@ const VideoWrapper = styled.div`
   video {
     max-width: 100%;
     max-height: 100%;
+    opacity: 0.8;
+
   }
 `;
 
