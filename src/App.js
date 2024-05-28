@@ -1,15 +1,15 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import Landing from "./screens/Landing.jsx";
 
 export default function App() {
   return (
-    <div>
+    <HelmetProvider>
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
         <title>Players | Faire du sport n’a jamais été aussi challengeant</title>
         <meta name="description" content="Rejoignez notre communauté sportive dynamique et trouvez des partenaires de jeu pour football, basketball, tennis, et plus encore. Vivez des expériences uniques près de chez vous !" />
@@ -23,6 +23,6 @@ export default function App() {
         <meta name="twitter:image" content="https://res.cloudinary.com/daroyxenr/image/upload/c_thumb,w_200,g_face/v1715685571/Product_Features_Website_oum4io.svg" />
       </Helmet>
       <Landing />
-    </div>
+    </HelmetProvider>
   );
 }
