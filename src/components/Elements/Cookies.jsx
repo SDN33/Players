@@ -22,7 +22,7 @@ const Popup = styled.div`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
   border: 1px solid #ccc;
-  width: 40rem;
+  width: 20rem;
   text-align: center;
 
 `;
