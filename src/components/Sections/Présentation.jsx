@@ -13,10 +13,13 @@ const VideoWrapper = styled.div`
   top: -9rem;
   overflow: hidden;
 
+
   video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0.7;
+
 
     @media (max-width: 480px) {
       height: 80%;
