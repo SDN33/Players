@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // Sections
 import TopNavbar from "../components/Nav/TopNavbar";
@@ -10,14 +10,9 @@ import Contact from "../components/Sections/Contact";
 import Footer from "../components/Sections/Footer";
 import CookiePopup from "../components/Elements/Cookies"; // Importez le composant CookiePopup
 
-
-
-
-
 export default function Landing() {
   return (
-    <>
-
+    <HelmetProvider>
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,11 +32,11 @@ export default function Landing() {
       </Helmet>
       <TopNavbar />
       <Header />
-      <Présentation/>
+      <Présentation />
       <Features />
       <Contact />
       <Footer />
       <CookiePopup />
-    </>
+    </HelmetProvider>
   );
 }
