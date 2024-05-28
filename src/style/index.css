@@ -401,7 +401,7 @@
 
 button {
     color: var(--bg);
-    font-weight: 700;
+    font-weight: 800;
     /*     background-image: linear-gradient(90deg, #fcecfe, #fbf6e7, #e6fcf5); */
     background: linear-gradient(90deg, rgba(255,49,49,1) 0%, rgba(255,145,77,1) 100%);
     padding: .8em 1.4em;
@@ -526,5 +526,3 @@ button.active .text {
   border-radius: 10px;
   text-align: center;
 }
-
-
