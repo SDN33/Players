@@ -103,7 +103,7 @@ export default function Contact() {
         </EmailContainer>
       </LogoContainer>
       <ContactWrapper>
-      <img src={ContactSvg} style={{ width: "70%", height: "auto", zIndex: -3 }} />
+      <img src={ContactSvg} style={{ width: "70%", height: "auto", zIndex: -3 }} alt="Contact image" />
       </ContactWrapper>
     </Wrapper>
   );

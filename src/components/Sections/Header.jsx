@@ -172,12 +172,12 @@ export default function Presentation() {
           <ResponsiveH4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</ResponsiveH4>
           <br />
           <BadgeWrapper>
-            <img src={StoreBadge} alt="Store Badge" style={{ width: "100%", maxWidth: "17rem" }} />
+            <img src={StoreBadge} alt="App Store Badges" style={{ width: "100%", maxWidth: "17rem" }} />
           </BadgeWrapper>
           <NewsletterLine>👋🏻 ne manque pas le lancement prochainement !
           <br />Rejoins notre newsletter 📧</NewsletterLine>
           <BtnWrapper>
-            <FullButton title="S'inscrire" action={() => setShowPopup(true)} />
+            <FullButton title="S'inscrire" action={() => setShowPopup(true)} alt="S'inscrire à la newsletter" />
           </BtnWrapper>
 
         </div>
@@ -186,11 +186,11 @@ export default function Presentation() {
       <RightSide>
         <ImageWrapper>
         <video autoPlay loop muted playsInline style={{ borderRadius: "45px", width: "45%" }}>
-          <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" alt = "video" />
           Your browser does not support the video tag.
         </video>
 
-          <BackgroundSVG src="https://res.cloudinary.com/daroyxenr/image/upload/v1715699281/Untitled_design_ysobj2.svg" alt="Background SVG" />
+          <BackgroundSVG src="https://res.cloudinary.com/daroyxenr/image/upload/v1715699281/Untitled_design_ysobj2.svg" alt="Image Background" />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
               <QuotesIcon />

@@ -274,7 +274,7 @@ export default function Présentation() {
             <p className="extraBold purpleColor">dans une ambiance conviviale et compétitive.</p>
           </TextlongWrapper>
           <BtnWrapper>
-            <FullButton title="S'inscrire à la newsletter" action={() => setShowPopup(true)} />
+            <FullButton title="S'inscrire à la newsletter" action={() => setShowPopup(true)} alt="S'inscrire à la newsletter" />
           </BtnWrapper>
         </ContentWrapper>
       </VideoWrapper>
