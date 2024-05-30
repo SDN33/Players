@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
+import moment from "moment-timezone";
 // Components
 import FullButton from "../Buttons/FullButton";
 // Assets
@@ -60,7 +61,6 @@ const Popup = styled.div`
 `;
 
 const validateEmail = (email) => {
-  // Expression régulière pour la validation de l'e-mail
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 };
@@ -71,7 +71,6 @@ const ErrorText = styled.p`
   margin-top: 0.5rem;
 `;
 
-
 const LogoWrapper = styled.div`
   @media (max-width: 480px) {
     position: relative;
@@ -79,24 +78,20 @@ const LogoWrapper = styled.div`
   }
 `;
 
-
 const BadgeWrapper = styled.div`
   position: relative;
   top: -9.5rem;
   left: -1%;
 
-
   @media (max-width: 480px) {
     position: relative;
     top: -9rem;
-
   }
 `;
 
 const fadeIn = keyframes`
   from {
     opacity: 0;
-
   }
   to {
     opacity: 1;
@@ -104,7 +99,7 @@ const fadeIn = keyframes`
 `;
 
 const NewsletterLine = styled.h6`
-  animation: ${fadeIn} 5s ease-in-out infinite; /* Utilisation de l'animation fadeIn */
+  animation: ${fadeIn} 5s ease-in-out infinite;
   padding: 0.1rem;
   display: flex;
   justify-content: center;
@@ -122,6 +117,28 @@ export default function Presentation() {
   const [message, setMessage] = useState("Inscription newsletter");
   const [subscriptionSuccess, setSubscriptionSuccess] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const [timeRemaining, setTimeRemaining] = useState(null);
+  const intervalRef = useRef(null);
+
+  useEffect(() => {
+    const updateTimeRemaining = () => {
+      const currentDate = new Date();
+      const nextYear = currentDate.getFullYear() ;
+      const targetDate = moment.tz(`${nextYear}-08-15 00:00`, "Europe/Paris").toDate();
+      const diff = targetDate - currentDate;
+      if (diff <= 0) {
+        setTimeRemaining(0);
+        clearInterval(intervalRef.current);
+      } else {
+        setTimeRemaining(diff);
+      }
+    };
+
+    updateTimeRemaining();
+    intervalRef.current = setInterval(updateTimeRemaining, 1000);
+
+    return () => clearInterval(intervalRef.current);
+  }, []);
 
   const handleSubscribe = (event) => {
     event.preventDefault();
@@ -129,7 +146,7 @@ export default function Presentation() {
       setEmailError("Veuillez saisir une adresse e-mail valide.");
       return;
     }
-    setEmailError(""); // Réinitialiser l'erreur si l'e-mail est valide
+    setEmailError("");
     fetch('https://formspree.io/f/xvoenaon', {
       method: 'POST',
       body: JSON.stringify({ email, message }),
@@ -137,18 +154,18 @@ export default function Presentation() {
         'Content-Type': 'application/json'
       }
     })
-    .then(response => {
-      if (response.ok) {
-        console.log('Subscription successful!');
-        setShowPopup(false);
-        setSubscriptionSuccess(true);
-      } else {
-        console.error('There was an error subscribing!');
-      }
-    })
-    .catch(error => {
-      console.error('There was an error subscribing!', error);
-    });
+      .then(response => {
+        if (response.ok) {
+          console.log('Subscription successful!');
+          setShowPopup(false);
+          setSubscriptionSuccess(true);
+        } else {
+          console.error('There was an error subscribing!');
+        }
+      })
+      .catch(error => {
+        console.error('There was an error subscribing!', error);
+      });
   };
 
   useEffect(() => {
@@ -160,37 +177,42 @@ export default function Presentation() {
     }
   }, [subscriptionSuccess]);
 
+  const formatTime = (time) => {
+    if (time <= 0) return "00:00:00:00";
+    const days = String(Math.floor(time / (1000 * 60 * 60 * 24))).padStart(2, '0');
+    const hours = String(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+    const minutes = String(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+    const seconds = String(Math.floor((time % (1000 * 60)) / 1000)).padStart(2, '0');
+    return `${days} Jours ${hours} Heures ${minutes} Minutes ${seconds} Secondes`;
+  };
 
   return (
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
         <div style={{ textAlign: 'center' }}>
           <LogoWrapper>
-            <LogoIcon className="responsive-logo"/>
+            <LogoIcon className="responsive-logo" />
           </LogoWrapper>
           <ResponsiveP className="font20 semiBold soustitre">Faire du sport n’a jamais été aussi challengeant</ResponsiveP>
-          <br/>
+          <br />
           <ResponsiveH4 className="extraBold font60 slogan">Trouvez facilement des joueurs près de chez vous !</ResponsiveH4>
           <br />
           <BadgeWrapper>
             <img src={StoreBadge} alt="App Store Badges" style={{ width: "100%", maxWidth: "17rem" }} />
           </BadgeWrapper>
-          <NewsletterLine>👋🏻 Ne manque pas le lancement prochainement !
-          <br />Rejoins notre newsletter 📧</NewsletterLine>
+          <NewsletterLine>👋🏻 Ne manque pas le lancement prochainement !<br />Rejoins notre newsletter 📧</NewsletterLine>
           <BtnWrapper>
             <FullButton title="Inscris toi !" action={() => setShowPopup(true)} alt="S'inscrire à la newsletter" />
           </BtnWrapper>
-
         </div>
       </LeftSide>
 
       <RightSide>
         <ImageWrapper>
-        <video autoPlay loop muted playsInline style={{ borderRadius: "45px", width: "45%" }}>
-          <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" alt = "video" />
-          Your browser does not support the video tag.
-        </video>
-
+          <video autoPlay loop muted playsInline style={{ borderRadius: "45px", width: "45%" }}>
+            <source src="https://res.cloudinary.com/daroyxenr/video/upload/v1715712567/Untitled_design_5_bux65p.mp4" type="video/mp4" alt="video" />
+            Your browser does not support the video tag.
+          </video>
           <BackgroundSVG src="https://res.cloudinary.com/daroyxenr/image/upload/v1715699281/Untitled_design_ysobj2.svg" alt="Image Background" />
           <QuoteWrapper className="flexCenter darkBg radius8">
             <QuotesWrapper>
@@ -201,11 +223,17 @@ export default function Presentation() {
                 <em className="quotetext">"Après ma retraite sportive, j'ai ressenti un vide sans l'adrénaline des compétitions et la camaraderie des entraînements.
                 Alors j'ai créé Players !"</em>
               </p>
-              <p className="font13 orangeColor textRight autheurname" style={{marginTop: '10px'}}>Stéphane Dei-negri | Créateur de Players</p>
+              <p className="font13 orangeColor textRight autheurname" style={{ marginTop: '10px' }}>Stéphane Dei-negri | Créateur de Players</p>
             </div>
           </QuoteWrapper>
         </ImageWrapper>
       </RightSide>
+      <div className="clockwrapper textCenter">
+        <div className="clock">
+          <h6 className="font15 semiBold">🕒 Lancement de Players le 15 Aout 2024 🕒</h6>
+          <p className="timer">{timeRemaining !== null ? formatTime(timeRemaining) : "Chargement..."}</p>
+        </div>
+      </div>
       <div>
         {showPopup && (
           <div onClick={() => setShowPopup(false)} className="popup-background">
@@ -260,11 +288,8 @@ const Wrapper = styled.section`
     align-items: center;
     text-align: center;
     padding-top: 110px;
-    margin-top: 4rem;
-
+    margin-top: 7rem;
   }
-
-
 `;
 
 const LeftSide = styled.div`
@@ -284,11 +309,9 @@ const LeftSide = styled.div`
     margin-top: 2rem;
     text-align: center;
   }
-  /* iPad Air (10.9 pouces, résolution 1640 x 2360 pixels) */
   @media only screen and (max-width: 1640px) {
-    height: 88vh
+    height: 88vh;
   }
-
 `;
 
 const RightSide = styled.div`

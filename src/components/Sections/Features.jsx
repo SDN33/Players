@@ -23,7 +23,7 @@ const LogoWrapper = styled.div`
   }
 
   @media (max-width: 480px) {
-    display: none; /* Ne pas afficher le LogoIcon lorsque la largeur de l'écran est inférieure ou égale à 480px */
+    display: none;  /* Ne pas afficher le LogoIcon lorsque la largeur de l'écran est inférieure ou égale à 480px */
 
 
   }
@@ -34,6 +34,7 @@ const MobilePWrapper = styled.div`
 
   @media (max-width: 480px) {
     display: block; /* Afficher le LogoIcon lorsque la largeur de l'écran est inférieure ou égale à 480px */  }
+
 `;
 
 const LightLogoIconWrapper = styled.div`
@@ -41,7 +42,7 @@ const LightLogoIconWrapper = styled.div`
   @media (max-width: 480px) {
     position: relative;
     top: -15rem;
-    left: 25%;
+    left: 33%;
   }
 `;
 
@@ -70,7 +71,7 @@ z-index: 1;
 
 @media (max-width: 480px) {
   position: relative;
-  top: -2rem;
+  top: 4rem;
   left: 19%;
   width: 60%;
 
@@ -141,7 +142,7 @@ const BodyWrapper = styled.section`
 
 
   @media (max-width: 480px) {
-    height: 130vh;
+    height: 160vh;
   }
 
 
@@ -239,7 +240,7 @@ const FeaturesSVGWrapper = styled.div`
       width: 180%;
       height: 180%;
       position: relative;
-      top: -28rem;
+      top: -22em;
       left: 0%;
 
     }
@@ -300,7 +301,7 @@ const FeaturestextWrapper = styled.div`
       width: 180%;
       height: 180%;
       position: relative;
-      top: -37rem;
+      top: -30em;
       left: 1%;
     }
   }

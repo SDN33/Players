@@ -529,3 +529,55 @@ button.active .text {
   border-radius: 10px;
   text-align: center;
 }
+
+
+.clockwrapper {
+  width: 650px;
+  position: absolute;
+  top: 117%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1000;
+  font-weight: 800;
+  color: #F4C59A;
+
+  @media (max-width: 992px) {
+    top: 90%;
+
+  }
+
+  @media (max-width: 480px) {
+    top: 95%;
+  }
+
+}
+
+
+.clock h6 {
+  margin-bottom: -5rem; /* Adjust this value to reduce space */
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: #FF4336;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+
+
+
+
+  @media (max-width: 480px) {
+    width: 100%;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+
+}
