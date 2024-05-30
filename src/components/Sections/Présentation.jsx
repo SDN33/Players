@@ -169,6 +169,13 @@ const Popup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 20rem;
+
+  @media (max-width: 960px) {
+    text-align: center;
+    row-gap: 0.1rem;
+  }
 
   button {
     margin-top: 1rem;
@@ -177,6 +184,8 @@ const Popup = styled.div`
     font-weight: 700;
     background: linear-gradient(90deg, rgba(255,49,49,1) 0%, rgba(255,145,77,1) 100%);
     padding: .8em 1.4em;
+    position: relative;
+    box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
     border-radius: 0.66em;
     transition: all var(--spring-duration) var(--spring-easing);
     width: 100%;
@@ -185,9 +194,15 @@ const Popup = styled.div`
   input {
     padding: 0.5rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     border-radius: 8px;
     border: 1px solid #fff;
-    width: 100%;
+    width: 70%;
+
+    @media (max-width: 960px) {
+      text-align: center;
+      max-width: 90%;
+    }
   }
 `;
 
