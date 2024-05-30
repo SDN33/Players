@@ -160,6 +160,11 @@ const NossportsWrapper = styled.div`
     margin-top: -6rem;
     background-color: transparent;
   }
+
+  @media (max-width: 360px) {
+    top: -7rem;
+  }
+
 `;
 
 const Popup = styled.div`

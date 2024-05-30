@@ -290,6 +290,11 @@ const Wrapper = styled.section`
     padding-top: 110px;
     margin-top: 7rem;
   }
+
+  @media (max-width: 360px) {
+    padding-top: 120px;
+    margin-bottom: 12em;
+  }
 `;
 
 const LeftSide = styled.div`
