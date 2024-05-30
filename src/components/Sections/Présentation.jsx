@@ -20,17 +20,6 @@ const VideoWrapper = styled.div`
     object-fit: cover;
     opacity: 0.7;
 
-    @media (max-width: 1285.60px) {
-      height: 140vh;
-    }
-
-    @media only screen and (max-width: 1080px) {
-      height: 150vh;
-    }
-
-    @media only screen and (max-width: 960px) {
-      height: 90vh;
-    }
 
     @media (max-width: 480px) {
       height: 80%;
@@ -47,9 +36,13 @@ const VideoWrapper = styled.div`
     }
   }
 
+  @media (max-width: 1285.60px) {
+    height: 140vh;
+  }
 
-
-
+  @media only screen and (max-width: 1080px) {
+    height: 150vh;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -66,7 +59,7 @@ const ContentWrapper = styled.div`
   padding: -1 1rem;
 
   @media (max-width: 960px) {
-    top: 12rem;
+    top: 5rem;
   }
 
   @media (max-width: 480px) {
@@ -144,7 +137,7 @@ const NossportsWrapper = styled.div`
     @media (max-width: 960px) {
       width: 100%;
       position: relative;
-      top: -12rem;
+      top: -5rem;
     }
   }
 
@@ -157,14 +150,9 @@ const NossportsWrapper = styled.div`
     width: 95%;
     left: 0.6rem;
     margin-bottom: -22rem;
-    margin-top: -6rem;
+    margin-top: -11rem;
     background-color: transparent;
   }
-
-  @media (max-width: 360px) {
-    top: -7rem;
-  }
-
 `;
 
 const Popup = styled.div`
