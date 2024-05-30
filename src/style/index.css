@@ -542,16 +542,19 @@ button.active .text {
   color: #F4C59A;
 
   @media (max-width: 992px) {
-    top: 90%;
+    top: 115%;
 
   }
+
 
   @media (max-width: 480px) {
     top: 95%;
+
   }
 
   @media (max-width: 360px) {
-    top: 90%;
+    top: 100%;
+
   }
 
 }
