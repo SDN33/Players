@@ -108,6 +108,8 @@ const NewsletterLine = styled.h6`
   padding: 0.1rem;
   display: flex;
   justify-content: center;
+  position: relative;
+  left: -0.7rem;
   align-items: center;
   color: #F4C59A;
   font-weight: 700;
@@ -175,7 +177,7 @@ export default function Presentation() {
           <BadgeWrapper>
             <img src={StoreBadge} alt="App Store Badges" style={{ width: "100%", maxWidth: "17rem" }} />
           </BadgeWrapper>
-          <NewsletterLine>👋🏻 Ne manque pas le lancement prochainement !
+          <NewsletterLine>👋🏻 Ne manque pas le lancement le 15 Août 2024 !
           <br />Rejoins notre newsletter 📧</NewsletterLine>
           <BtnWrapper>
             <FullButton title="Inscris toi !" action={() => setShowPopup(true)} alt="S'inscrire à la newsletter" />
