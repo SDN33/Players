@@ -102,9 +102,9 @@ const BadgeWrapper = styled.div`
 
   @media (max-width: 480px) {
     position: relative;
-    top: -2rem;
-    left: 19%;
-    width: 60%;
+    top: 0rem;
+    left: 29.5%;
+    width: 40%;
   }
 `;
 
@@ -406,7 +406,7 @@ export default function Features() {
       </BadgeWrapper>
       <TimerWrapper>
         <h2 className="textCenter">
-          Compte à rebours pour le <span>LANCEMENT</span> de l'app !
+          Compte à rebours pour le <span>LANCEMENT</span> de l'app mobile !
         </h2>
         <div className="countdown" data-target-date="2024-08-15 00:00:00"></div>
       </TimerWrapper>

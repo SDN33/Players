@@ -12,13 +12,14 @@ const LogoWrapper = styled.div`
 const ContactWrapper = styled.div`
   position: relative;
   left: 50%;
-  top: -10rem;
+  top: -15rem;
   width: 60%;
   z-index: 1 ; /* Assurez-vous que le z-index est supérieur à celui du footer */
 
+
   @media only screen and (max-width: 1640px) {
     left: 70%;
-    top: -120%;
+    top: -105%;
   }
 
   @media only screen and (max-width: 1280px) {
@@ -100,6 +101,12 @@ export default function Contact() {
           <p className="semiBold">Facebook </p>
           <p className="semiBold">Instagram</p>
           <a className="semiBold" href="https://www.linkedin.com/in/stephane-dn">Linkedin</a>
+          <br />
+          <br />
+          <h4 className="extraBold font40 purpleColor">Partenaires</h4>
+          <p className="semiBold">SevenMates</p>
+          <br />
+          <br />
         </EmailContainer>
       </LogoContainer>
       <ContactWrapper>
@@ -120,17 +127,20 @@ const bounce = keyframes`
 
 const Wrapper = styled.section`
   background-color: #060606;
-  height: 100vh; /* Réduit la hauteur pour éviter le défilement excessif */
+  height: 200vh; /* Réduit la hauteur pour éviter le défilement excessif */
   position: relative;
 
-  @media (max-width: 960px) {
+  @media only screen and (max-width: 1640px) {
     height: 100vh;
-    left: -6rem;
   }
 
-  @media only screen and (max-width: 1640px) {
-    height: 80vh;
+  @media (max-width: 960px) {
+    height: 85vh;
+    left: -6rem;
+    top: 0rem;
   }
+
+
 
 `;
 
