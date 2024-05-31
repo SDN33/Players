@@ -116,6 +116,11 @@ const NewsletterLine = styled.h6`
   font-size: 0.8rem;
   margin-bottom: 1rem;
   width: 100%;
+
+  @media (max-width: 480px) {
+    position: relative;
+    left: 0rem;
+  }
 `;
 
 export default function Presentation() {
